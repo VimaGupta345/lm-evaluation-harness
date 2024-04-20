@@ -11,6 +11,7 @@ TASKS["gsm8k"]=5
 
 # Base directory for your project
 BASE_DIR="/storage/home/hcoda1/4/vgupta345/p-apadmanabh3-0/lm-eval/lm_eval_new/lm-evaluation-harness"
+MIXTRAL_CONFIG_PATH="/storage/coda1/p-apadmanabh3/0/vgupta345/prowl/mixtral_configs/none-none-2.json"
 
 # Loop over each task and create a specific SLURM batch file
 for TASK in "${!TASKS[@]}"; do
