@@ -1,0 +1,292 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-12-2024 04:45:21
+Job ID:    5646130
+User ID:   vgupta345
+Account:   gts-ag117
+Job name:  LM_eval_all_layers
+Partition: gpu-a100
+QOS:       embers
+---------------------------------------
+Fri Apr 12 04:45:21 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.86.10              Driver Version: 535.86.10    CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100-PCIE-40GB          On  | 00000000:25:00.0 Off |                    0 |
+| N/A   37C    P0              48W / 250W |      4MiB / 40960MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+wandb: Currently logged in as: vima-gupta. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.16.6
+wandb: Run data is saved locally in /storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/wandb/run-20240412_044534-n7n5btei
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run wv-0.5-mlp-only
+wandb: ⭐️ View project at https://wandb.ai/vima-gupta/model_merging
+wandb: 🚀 View run at https://wandb.ai/vima-gupta/model_merging/runs/n7n5btei
+2024-04-12:04:45:34,598 INFO     [__main__.py:251] Verbosity set to INFO
+2024-04-12:04:45:41,134 INFO     [__main__.py:335] Selected Tasks: ['lambada_openai', 'mmlu']
+2024-04-12:04:45:41,139 INFO     [evaluator.py:131] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-04-12:04:45:41,139 INFO     [evaluator.py:177] Initializing vllm model, with arguments: {'pretrained': '/storage/coda1/p-apadmanabh3/0/vgupta345/merging_exp/slerp_0.5_Wizard7B_Vicuna7b/merge_mlp_only'}
+INFO 04-12 04:45:41 llm_engine.py:74] Initializing an LLM engine (v0.4.0.post1) with config: model='/storage/coda1/p-apadmanabh3/0/vgupta345/merging_exp/slerp_0.5_Wizard7B_Vicuna7b/merge_mlp_only', tokenizer='/storage/coda1/p-apadmanabh3/0/vgupta345/merging_exp/slerp_0.5_Wizard7B_Vicuna7b/merge_mlp_only', tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=4096, download_dir=None, load_format=auto, tensor_parallel_size=1, disable_custom_all_reduce=True, quantization=None, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, seed=1234)
+You set `add_prefix_space`. The tokenizer needs to be converted from the slow tokenizers
+INFO 04-12 04:45:42 selector.py:51] Cannot use FlashAttention because the package is not found. Please install it for better performance.
+INFO 04-12 04:45:42 selector.py:25] Using XFormers backend.
+INFO 04-12 04:45:48 model_runner.py:104] Loading model weights took 12.5523 GB
+INFO 04-12 04:45:49 gpu_executor.py:94] # GPU blocks: 2848, # CPU blocks: 512
+INFO 04-12 04:45:50 model_runner.py:791] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 04-12 04:45:50 model_runner.py:795] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 04-12 04:45:54 model_runner.py:867] Graph capturing finished in 4 secs.
+2024-04-12:04:45:55,523 WARNING  [task.py:322] [Task: lambada_openai] has_training_docs and has_validation_docs are False, using test_docs as fewshot_docs but this is not recommended.
+2024-04-12:04:45:55,523 WARNING  [task.py:322] [Task: lambada_openai] has_training_docs and has_validation_docs are False, using test_docs as fewshot_docs but this is not recommended.
+/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/datasets/load.py:1461: FutureWarning: The repository for hails/mmlu_no_train contains custom code which must be executed to correctly load the dataset. You can inspect the repository content at https://hf.co/datasets/hails/mmlu_no_train
+You can avoid this message in future by passing the argument `trust_remote_code=True`.
+Passing `trust_remote_code=True` will be mandatory to load this dataset from the next major release of `datasets`.
+  warnings.warn(
+2024-04-12:04:46:46,068 INFO     [task.py:395] Building contexts for mmlu_world_religions on rank 0...
+  0%|          | 0/171 [00:00<?, ?it/s] 52%|█████▏    | 89/171 [00:00<00:00, 884.16it/s]100%|██████████| 171/171 [00:00<00:00, 883.28it/s]
+2024-04-12:04:46:46,270 INFO     [task.py:395] Building contexts for mmlu_prehistory on rank 0...
+  0%|          | 0/324 [00:00<?, ?it/s] 27%|██▋       | 89/324 [00:00<00:00, 884.49it/s] 55%|█████▌    | 179/324 [00:00<00:00, 888.81it/s] 83%|████████▎ | 268/324 [00:00<00:00, 888.42it/s]100%|██████████| 324/324 [00:00<00:00, 888.53it/s]
+2024-04-12:04:46:46,645 INFO     [task.py:395] Building contexts for mmlu_moral_disputes on rank 0...
+  0%|          | 0/346 [00:00<?, ?it/s] 26%|██▌       | 90/346 [00:00<00:00, 890.12it/s] 52%|█████▏    | 180/346 [00:00<00:00, 888.90it/s] 78%|███████▊  | 269/346 [00:00<00:00, 888.78it/s]100%|██████████| 346/346 [00:00<00:00, 888.33it/s]
+2024-04-12:04:46:47,047 INFO     [task.py:395] Building contexts for mmlu_jurisprudence on rank 0...
+  0%|          | 0/108 [00:00<?, ?it/s] 82%|████████▏ | 89/108 [00:00<00:00, 883.83it/s]100%|██████████| 108/108 [00:00<00:00, 883.42it/s]
+2024-04-12:04:46:47,173 INFO     [task.py:395] Building contexts for mmlu_high_school_european_history on rank 0...
+  0%|          | 0/165 [00:00<?, ?it/s] 54%|█████▍    | 89/165 [00:00<00:00, 885.33it/s]100%|██████████| 165/165 [00:00<00:00, 887.25it/s]
+2024-04-12:04:46:47,369 INFO     [task.py:395] Building contexts for mmlu_logical_fallacies on rank 0...
+  0%|          | 0/163 [00:00<?, ?it/s] 55%|█████▌    | 90/163 [00:00<00:00, 891.44it/s]100%|██████████| 163/163 [00:00<00:00, 889.99it/s]
+2024-04-12:04:46:47,558 INFO     [task.py:395] Building contexts for mmlu_international_law on rank 0...
+  0%|          | 0/121 [00:00<?, ?it/s] 74%|███████▍  | 90/121 [00:00<00:00, 896.06it/s]100%|██████████| 121/121 [00:00<00:00, 891.65it/s]
+2024-04-12:04:46:47,698 INFO     [task.py:395] Building contexts for mmlu_high_school_world_history on rank 0...
+  0%|          | 0/237 [00:00<?, ?it/s] 38%|███▊      | 89/237 [00:00<00:00, 882.76it/s] 75%|███████▌  | 178/237 [00:00<00:00, 882.14it/s]100%|██████████| 237/237 [00:00<00:00, 881.23it/s]
+2024-04-12:04:46:47,980 INFO     [task.py:395] Building contexts for mmlu_moral_scenarios on rank 0...
+  0%|          | 0/895 [00:00<?, ?it/s] 10%|▉         | 89/895 [00:00<00:00, 883.87it/s] 20%|█▉        | 178/895 [00:00<00:00, 883.92it/s] 30%|██▉       | 267/895 [00:00<00:00, 884.61it/s] 40%|███▉      | 356/895 [00:00<00:00, 884.45it/s] 50%|████▉     | 445/895 [00:00<00:00, 884.57it/s] 60%|█████▉    | 534/895 [00:00<00:00, 884.52it/s] 70%|██████▉   | 623/895 [00:00<00:00, 885.99it/s] 80%|███████▉  | 712/895 [00:00<00:00, 886.84it/s] 89%|████████▉ | 801/895 [00:00<00:00, 886.89it/s]100%|█████████▉| 891/895 [00:01<00:00, 888.16it/s]100%|██████████| 895/895 [00:01<00:00, 886.06it/s]
+2024-04-12:04:46:49,023 INFO     [task.py:395] Building contexts for mmlu_high_school_us_history on rank 0...
+  0%|          | 0/204 [00:00<?, ?it/s] 45%|████▍     | 91/204 [00:00<00:00, 901.74it/s] 89%|████████▉ | 182/204 [00:00<00:00, 901.38it/s]100%|██████████| 204/204 [00:00<00:00, 900.46it/s]
+2024-04-12:04:46:49,261 INFO     [task.py:395] Building contexts for mmlu_formal_logic on rank 0...
+  0%|          | 0/126 [00:00<?, ?it/s] 71%|███████▏  | 90/126 [00:00<00:00, 899.31it/s]100%|██████████| 126/126 [00:00<00:00, 898.54it/s]
+2024-04-12:04:46:49,406 INFO     [task.py:395] Building contexts for mmlu_philosophy on rank 0...
+  0%|          | 0/311 [00:00<?, ?it/s] 29%|██▉       | 91/311 [00:00<00:00, 900.99it/s] 59%|█████▊    | 182/311 [00:00<00:00, 414.92it/s] 86%|████████▋ | 269/311 [00:00<00:00, 539.95it/s]100%|██████████| 311/311 [00:00<00:00, 563.39it/s]
+2024-04-12:04:46:49,969 INFO     [task.py:395] Building contexts for mmlu_professional_law on rank 0...
+  0%|          | 0/1534 [00:00<?, ?it/s]  6%|▌         | 88/1534 [00:00<00:01, 879.34it/s] 11%|█▏        | 176/1534 [00:00<00:01, 878.84it/s] 17%|█▋        | 265/1534 [00:00<00:01, 879.52it/s] 23%|██▎       | 354/1534 [00:00<00:01, 881.97it/s] 29%|██▉       | 443/1534 [00:00<00:01, 883.49it/s] 35%|███▍      | 533/1534 [00:00<00:01, 886.69it/s] 41%|████      | 622/1534 [00:00<00:01, 886.54it/s] 46%|████▋     | 711/1534 [00:00<00:00, 886.56it/s] 52%|█████▏    | 800/1534 [00:00<00:00, 885.93it/s] 58%|█████▊    | 890/1534 [00:01<00:00, 887.81it/s] 64%|██████▍   | 980/1534 [00:01<00:00, 889.04it/s] 70%|██████▉   | 1070/1534 [00:01<00:00, 889.52it/s] 76%|███████▌  | 1160/1534 [00:01<00:00, 890.85it/s] 81%|████████▏ | 1250/1534 [00:01<00:00, 890.86it/s] 87%|████████▋ | 1340/1534 [00:01<00:00, 891.70it/s] 93%|█████████▎| 1430/1534 [00:01<00:00, 890.97it/s] 99%|█████████▉| 1520/1534 [00:01<00:00, 891.98it/s]100%|██████████| 1534/1534 [00:01<00:00, 887.96it/s]
+2024-04-12:04:46:51,759 INFO     [task.py:395] Building contexts for mmlu_professional_psychology on rank 0...
+  0%|          | 0/612 [00:00<?, ?it/s] 15%|█▍        | 89/612 [00:00<00:00, 887.49it/s] 29%|██▉       | 178/612 [00:00<00:00, 888.46it/s] 44%|████▍     | 268/612 [00:00<00:00, 890.71it/s] 58%|█████▊    | 358/612 [00:00<00:00, 889.91it/s] 73%|███████▎  | 448/612 [00:00<00:00, 890.65it/s] 88%|████████▊ | 538/612 [00:00<00:00, 890.09it/s]100%|██████████| 612/612 [00:00<00:00, 889.90it/s]
+2024-04-12:04:46:52,469 INFO     [task.py:395] Building contexts for mmlu_high_school_macroeconomics on rank 0...
+  0%|          | 0/390 [00:00<?, ?it/s] 23%|██▎       | 89/390 [00:00<00:00, 886.28it/s] 46%|████▌     | 179/390 [00:00<00:00, 889.95it/s] 69%|██████▊   | 268/390 [00:00<00:00, 889.36it/s] 92%|█████████▏| 357/390 [00:00<00:00, 889.11it/s]100%|██████████| 390/390 [00:00<00:00, 888.98it/s]
+2024-04-12:04:46:52,922 INFO     [task.py:395] Building contexts for mmlu_public_relations on rank 0...
+  0%|          | 0/110 [00:00<?, ?it/s] 81%|████████  | 89/110 [00:00<00:00, 889.11it/s]100%|██████████| 110/110 [00:00<00:00, 886.49it/s]
+2024-04-12:04:46:53,050 INFO     [task.py:395] Building contexts for mmlu_econometrics on rank 0...
+  0%|          | 0/114 [00:00<?, ?it/s] 79%|███████▉  | 90/114 [00:00<00:00, 895.88it/s]100%|██████████| 114/114 [00:00<00:00, 892.76it/s]
+2024-04-12:04:46:53,182 INFO     [task.py:395] Building contexts for mmlu_high_school_psychology on rank 0...
+  0%|          | 0/545 [00:00<?, ?it/s] 16%|█▋        | 89/545 [00:00<00:00, 886.54it/s] 33%|███▎      | 178/545 [00:00<00:00, 885.83it/s] 49%|████▉     | 267/545 [00:00<00:00, 887.41it/s] 65%|██████▌   | 356/545 [00:00<00:00, 887.39it/s] 82%|████████▏ | 446/545 [00:00<00:00, 888.62it/s] 98%|█████████▊| 535/545 [00:00<00:00, 887.97it/s]100%|██████████| 545/545 [00:00<00:00, 887.20it/s]
+2024-04-12:04:46:53,815 INFO     [task.py:395] Building contexts for mmlu_security_studies on rank 0...
+  0%|          | 0/245 [00:00<?, ?it/s] 36%|███▋      | 89/245 [00:00<00:00, 889.75it/s] 73%|███████▎  | 178/245 [00:00<00:00, 887.08it/s]100%|██████████| 245/245 [00:00<00:00, 888.72it/s]
+2024-04-12:04:46:54,102 INFO     [task.py:395] Building contexts for mmlu_sociology on rank 0...
+  0%|          | 0/201 [00:00<?, ?it/s] 44%|████▍     | 89/201 [00:00<00:00, 883.77it/s] 89%|████████▊ | 178/201 [00:00<00:00, 885.70it/s]100%|██████████| 201/201 [00:00<00:00, 879.03it/s]
+2024-04-12:04:46:54,337 INFO     [task.py:395] Building contexts for mmlu_high_school_geography on rank 0...
+  0%|          | 0/198 [00:00<?, ?it/s] 45%|████▍     | 89/198 [00:00<00:00, 884.51it/s] 90%|████████▉ | 178/198 [00:00<00:00, 887.48it/s]100%|██████████| 198/198 [00:00<00:00, 886.36it/s]
+2024-04-12:04:46:54,569 INFO     [task.py:395] Building contexts for mmlu_human_sexuality on rank 0...
+  0%|          | 0/131 [00:00<?, ?it/s] 68%|██████▊   | 89/131 [00:00<00:00, 887.97it/s]100%|██████████| 131/131 [00:00<00:00, 886.60it/s]
+2024-04-12:04:46:54,722 INFO     [task.py:395] Building contexts for mmlu_high_school_microeconomics on rank 0...
+  0%|          | 0/238 [00:00<?, ?it/s] 37%|███▋      | 89/238 [00:00<00:00, 889.35it/s] 75%|███████▍  | 178/238 [00:00<00:00, 886.91it/s]100%|██████████| 238/238 [00:00<00:00, 886.79it/s]
+2024-04-12:04:46:54,999 INFO     [task.py:395] Building contexts for mmlu_high_school_government_and_politics on rank 0...
+  0%|          | 0/193 [00:00<?, ?it/s] 46%|████▌     | 89/193 [00:00<00:00, 886.79it/s] 92%|█████████▏| 178/193 [00:00<00:00, 885.24it/s]100%|██████████| 193/193 [00:00<00:00, 884.33it/s]
+2024-04-12:04:46:55,224 INFO     [task.py:395] Building contexts for mmlu_us_foreign_policy on rank 0...
+  0%|          | 0/100 [00:00<?, ?it/s] 89%|████████▉ | 89/100 [00:00<00:00, 886.72it/s]100%|██████████| 100/100 [00:00<00:00, 884.56it/s]
+2024-04-12:04:46:55,341 INFO     [task.py:395] Building contexts for mmlu_miscellaneous on rank 0...
+  0%|          | 0/783 [00:00<?, ?it/s] 11%|█         | 88/783 [00:00<00:00, 878.34it/s] 22%|██▏       | 176/783 [00:00<00:00, 878.52it/s] 34%|███▍      | 265/783 [00:00<00:00, 880.61it/s] 45%|████▌     | 354/783 [00:00<00:00, 882.34it/s] 57%|█████▋    | 443/783 [00:00<00:00, 882.51it/s] 68%|██████▊   | 532/783 [00:00<00:00, 884.74it/s] 79%|███████▉  | 621/783 [00:00<00:00, 885.80it/s] 91%|█████████ | 710/783 [00:00<00:00, 886.09it/s]100%|██████████| 783/783 [00:00<00:00, 884.33it/s]
+2024-04-12:04:46:56,253 INFO     [task.py:395] Building contexts for mmlu_human_aging on rank 0...
+  0%|          | 0/223 [00:00<?, ?it/s] 40%|███▉      | 89/223 [00:00<00:00, 887.23it/s] 80%|███████▉  | 178/223 [00:00<00:00, 887.60it/s]100%|██████████| 223/223 [00:00<00:00, 885.47it/s]
+2024-04-12:04:46:56,513 INFO     [task.py:395] Building contexts for mmlu_professional_medicine on rank 0...
+  0%|          | 0/272 [00:00<?, ?it/s] 33%|███▎      | 89/272 [00:00<00:00, 888.80it/s] 65%|██████▌   | 178/272 [00:00<00:00, 886.21it/s] 98%|█████████▊| 267/272 [00:00<00:00, 885.26it/s]100%|██████████| 272/272 [00:00<00:00, 884.75it/s]
+2024-04-12:04:46:56,834 INFO     [task.py:395] Building contexts for mmlu_college_medicine on rank 0...
+  0%|          | 0/173 [00:00<?, ?it/s] 51%|█████▏    | 89/173 [00:00<00:00, 886.16it/s]100%|██████████| 173/173 [00:00<00:00, 886.70it/s]
+2024-04-12:04:46:57,037 INFO     [task.py:395] Building contexts for mmlu_medical_genetics on rank 0...
+  0%|          | 0/100 [00:00<?, ?it/s] 89%|████████▉ | 89/100 [00:00<00:00, 888.24it/s]100%|██████████| 100/100 [00:00<00:00, 885.59it/s]
+2024-04-12:04:46:57,155 INFO     [task.py:395] Building contexts for mmlu_nutrition on rank 0...
+  0%|          | 0/306 [00:00<?, ?it/s] 29%|██▉       | 89/306 [00:00<00:00, 889.82it/s] 58%|█████▊    | 179/306 [00:00<00:00, 891.63it/s] 88%|████████▊ | 269/306 [00:00<00:00, 888.30it/s]100%|██████████| 306/306 [00:00<00:00, 888.85it/s]
+2024-04-12:04:46:57,510 INFO     [task.py:395] Building contexts for mmlu_management on rank 0...
+  0%|          | 0/103 [00:00<?, ?it/s] 86%|████████▋ | 89/103 [00:00<00:00, 886.85it/s]100%|██████████| 103/103 [00:00<00:00, 869.86it/s]
+2024-04-12:04:46:57,633 INFO     [task.py:395] Building contexts for mmlu_global_facts on rank 0...
+  0%|          | 0/100 [00:00<?, ?it/s] 90%|█████████ | 90/100 [00:00<00:00, 894.01it/s]100%|██████████| 100/100 [00:00<00:00, 891.66it/s]
+2024-04-12:04:46:57,750 INFO     [task.py:395] Building contexts for mmlu_clinical_knowledge on rank 0...
+  0%|          | 0/265 [00:00<?, ?it/s] 34%|███▎      | 89/265 [00:00<00:00, 887.85it/s] 67%|██████▋   | 178/265 [00:00<00:00, 469.94it/s]100%|██████████| 265/265 [00:00<00:00, 587.63it/s]
+2024-04-12:04:46:58,211 INFO     [task.py:395] Building contexts for mmlu_virology on rank 0...
+  0%|          | 0/166 [00:00<?, ?it/s] 54%|█████▎    | 89/166 [00:00<00:00, 886.07it/s]100%|██████████| 166/166 [00:00<00:00, 887.42it/s]
+2024-04-12:04:46:58,405 INFO     [task.py:395] Building contexts for mmlu_marketing on rank 0...
+  0%|          | 0/234 [00:00<?, ?it/s] 38%|███▊      | 90/234 [00:00<00:00, 891.01it/s] 77%|███████▋  | 180/234 [00:00<00:00, 893.55it/s]100%|██████████| 234/234 [00:00<00:00, 893.11it/s]
+2024-04-12:04:46:58,676 INFO     [task.py:395] Building contexts for mmlu_professional_accounting on rank 0...
+  0%|          | 0/282 [00:00<?, ?it/s] 32%|███▏      | 90/282 [00:00<00:00, 893.32it/s] 64%|██████▍   | 180/282 [00:00<00:00, 890.87it/s] 96%|█████████▌| 270/282 [00:00<00:00, 891.96it/s]100%|██████████| 282/282 [00:00<00:00, 891.20it/s]
+2024-04-12:04:46:59,004 INFO     [task.py:395] Building contexts for mmlu_business_ethics on rank 0...
+  0%|          | 0/100 [00:00<?, ?it/s] 90%|█████████ | 90/100 [00:00<00:00, 891.22it/s]100%|██████████| 100/100 [00:00<00:00, 886.95it/s]
+2024-04-12:04:46:59,121 INFO     [task.py:395] Building contexts for mmlu_high_school_mathematics on rank 0...
+  0%|          | 0/270 [00:00<?, ?it/s] 33%|███▎      | 90/270 [00:00<00:00, 892.42it/s] 67%|██████▋   | 180/270 [00:00<00:00, 889.58it/s]100%|██████████| 270/270 [00:00<00:00, 890.11it/s]100%|██████████| 270/270 [00:00<00:00, 889.73it/s]
+2024-04-12:04:46:59,434 INFO     [task.py:395] Building contexts for mmlu_high_school_physics on rank 0...
+  0%|          | 0/151 [00:00<?, ?it/s] 59%|█████▉    | 89/151 [00:00<00:00, 886.13it/s]100%|██████████| 151/151 [00:00<00:00, 884.94it/s]
+2024-04-12:04:46:59,611 INFO     [task.py:395] Building contexts for mmlu_conceptual_physics on rank 0...
+  0%|          | 0/235 [00:00<?, ?it/s] 38%|███▊      | 90/235 [00:00<00:00, 890.85it/s] 77%|███████▋  | 180/235 [00:00<00:00, 891.38it/s]100%|██████████| 235/235 [00:00<00:00, 890.42it/s]
+2024-04-12:04:46:59,883 INFO     [task.py:395] Building contexts for mmlu_machine_learning on rank 0...
+  0%|          | 0/112 [00:00<?, ?it/s] 79%|███████▉  | 89/112 [00:00<00:00, 888.46it/s]100%|██████████| 112/112 [00:00<00:00, 887.17it/s]
+2024-04-12:04:47:00,016 INFO     [task.py:395] Building contexts for mmlu_anatomy on rank 0...
+  0%|          | 0/135 [00:00<?, ?it/s] 67%|██████▋   | 90/135 [00:00<00:00, 892.16it/s]100%|██████████| 135/135 [00:00<00:00, 891.83it/s]
+2024-04-12:04:47:00,173 INFO     [task.py:395] Building contexts for mmlu_elementary_mathematics on rank 0...
+  0%|          | 0/378 [00:00<?, ?it/s] 24%|██▎       | 89/378 [00:00<00:00, 888.44it/s] 47%|████▋     | 178/378 [00:00<00:00, 886.82it/s] 71%|███████   | 267/378 [00:00<00:00, 886.96it/s] 94%|█████████▍| 356/378 [00:00<00:00, 887.02it/s]100%|██████████| 378/378 [00:00<00:00, 886.89it/s]
+2024-04-12:04:47:00,613 INFO     [task.py:395] Building contexts for mmlu_high_school_biology on rank 0...
+  0%|          | 0/310 [00:00<?, ?it/s] 29%|██▉       | 90/310 [00:00<00:00, 890.89it/s] 58%|█████▊    | 180/310 [00:00<00:00, 891.71it/s] 87%|████████▋ | 270/310 [00:00<00:00, 891.39it/s]100%|██████████| 310/310 [00:00<00:00, 889.85it/s]
+2024-04-12:04:47:00,974 INFO     [task.py:395] Building contexts for mmlu_college_biology on rank 0...
+  0%|          | 0/144 [00:00<?, ?it/s] 62%|██████▎   | 90/144 [00:00<00:00, 894.25it/s]100%|██████████| 144/144 [00:00<00:00, 887.40it/s]
+2024-04-12:04:47:01,142 INFO     [task.py:395] Building contexts for mmlu_high_school_computer_science on rank 0...
+  0%|          | 0/100 [00:00<?, ?it/s] 89%|████████▉ | 89/100 [00:00<00:00, 888.31it/s]100%|██████████| 100/100 [00:00<00:00, 886.11it/s]
+2024-04-12:04:47:01,260 INFO     [task.py:395] Building contexts for mmlu_astronomy on rank 0...
+  0%|          | 0/152 [00:00<?, ?it/s] 59%|█████▊    | 89/152 [00:00<00:00, 889.45it/s]100%|██████████| 152/152 [00:00<00:00, 888.22it/s]
+2024-04-12:04:47:01,437 INFO     [task.py:395] Building contexts for mmlu_college_computer_science on rank 0...
+  0%|          | 0/100 [00:00<?, ?it/s] 89%|████████▉ | 89/100 [00:00<00:00, 887.16it/s]100%|██████████| 100/100 [00:00<00:00, 885.58it/s]
+2024-04-12:04:47:01,555 INFO     [task.py:395] Building contexts for mmlu_high_school_statistics on rank 0...
+  0%|          | 0/216 [00:00<?, ?it/s] 42%|████▏     | 90/216 [00:00<00:00, 889.45it/s] 83%|████████▎ | 180/216 [00:00<00:00, 891.33it/s]100%|██████████| 216/216 [00:00<00:00, 890.38it/s]
+2024-04-12:04:47:01,807 INFO     [task.py:395] Building contexts for mmlu_college_physics on rank 0...
+  0%|          | 0/102 [00:00<?, ?it/s] 88%|████████▊ | 90/102 [00:00<00:00, 891.35it/s]100%|██████████| 102/102 [00:00<00:00, 888.81it/s]
+2024-04-12:04:47:01,926 INFO     [task.py:395] Building contexts for mmlu_electrical_engineering on rank 0...
+  0%|          | 0/145 [00:00<?, ?it/s] 61%|██████▏   | 89/145 [00:00<00:00, 889.28it/s]100%|██████████| 145/145 [00:00<00:00, 889.64it/s]
+2024-04-12:04:47:02,095 INFO     [task.py:395] Building contexts for mmlu_high_school_chemistry on rank 0...
+  0%|          | 0/203 [00:00<?, ?it/s] 44%|████▍     | 89/203 [00:00<00:00, 882.90it/s] 88%|████████▊ | 178/203 [00:00<00:00, 883.01it/s]100%|██████████| 203/203 [00:00<00:00, 882.13it/s]
+2024-04-12:04:47:02,333 INFO     [task.py:395] Building contexts for mmlu_computer_security on rank 0...
+  0%|          | 0/100 [00:00<?, ?it/s] 89%|████████▉ | 89/100 [00:00<00:00, 889.93it/s]100%|██████████| 100/100 [00:00<00:00, 888.00it/s]
+2024-04-12:04:47:02,451 INFO     [task.py:395] Building contexts for mmlu_college_mathematics on rank 0...
+  0%|          | 0/100 [00:00<?, ?it/s] 89%|████████▉ | 89/100 [00:00<00:00, 888.22it/s]100%|██████████| 100/100 [00:00<00:00, 885.60it/s]
+2024-04-12:04:47:02,568 INFO     [task.py:395] Building contexts for mmlu_college_chemistry on rank 0...
+  0%|          | 0/100 [00:00<?, ?it/s] 89%|████████▉ | 89/100 [00:00<00:00, 888.79it/s]100%|██████████| 100/100 [00:00<00:00, 886.64it/s]
+2024-04-12:04:47:02,686 INFO     [task.py:395] Building contexts for mmlu_abstract_algebra on rank 0...
+  0%|          | 0/100 [00:00<?, ?it/s] 90%|█████████ | 90/100 [00:00<00:00, 893.01it/s]100%|██████████| 100/100 [00:00<00:00, 890.68it/s]
+2024-04-12:04:47:02,802 INFO     [task.py:395] Building contexts for lambada_openai on rank 0...
+  0%|          | 0/5153 [00:00<?, ?it/s]  1%|▏         | 77/5153 [00:00<00:06, 767.34it/s]  3%|▎         | 155/5153 [00:00<00:06, 771.63it/s]  5%|▍         | 233/5153 [00:00<00:06, 773.73it/s]  6%|▌         | 311/5153 [00:00<00:06, 774.07it/s]  8%|▊         | 389/5153 [00:00<00:06, 772.87it/s]  9%|▉         | 467/5153 [00:00<00:06, 772.86it/s] 11%|█         | 545/5153 [00:00<00:05, 773.63it/s] 12%|█▏        | 623/5153 [00:00<00:05, 775.21it/s] 14%|█▎        | 701/5153 [00:00<00:05, 776.31it/s] 15%|█▌        | 779/5153 [00:01<00:05, 776.05it/s] 17%|█▋        | 857/5153 [00:01<00:05, 776.53it/s] 18%|█▊        | 936/5153 [00:01<00:05, 777.60it/s] 20%|█▉        | 1014/5153 [00:01<00:05, 777.18it/s] 21%|██        | 1092/5153 [00:01<00:05, 777.55it/s] 23%|██▎       | 1170/5153 [00:01<00:05, 776.64it/s] 24%|██▍       | 1248/5153 [00:01<00:05, 776.85it/s] 26%|██▌       | 1326/5153 [00:01<00:04, 776.74it/s] 27%|██▋       | 1404/5153 [00:01<00:04, 777.07it/s] 29%|██▉       | 1482/5153 [00:01<00:04, 774.06it/s] 30%|███       | 1560/5153 [00:02<00:04, 764.55it/s] 32%|███▏      | 1639/5153 [00:02<00:04, 770.86it/s] 33%|███▎      | 1717/5153 [00:02<00:04, 772.91it/s] 35%|███▍      | 1796/5153 [00:02<00:04, 775.27it/s] 36%|███▋      | 1875/5153 [00:02<00:04, 776.85it/s] 38%|███▊      | 1954/5153 [00:02<00:04, 778.49it/s] 39%|███▉      | 2033/5153 [00:02<00:04, 779.34it/s] 41%|████      | 2112/5153 [00:02<00:03, 780.19it/s] 43%|████▎     | 2191/5153 [00:02<00:03, 780.88it/s] 44%|████▍     | 2270/5153 [00:02<00:03, 781.53it/s] 46%|████▌     | 2349/5153 [00:03<00:03, 782.24it/s] 47%|████▋     | 2428/5153 [00:03<00:03, 783.71it/s] 49%|████▊     | 2507/5153 [00:03<00:03, 784.41it/s] 50%|█████     | 2586/5153 [00:03<00:03, 785.38it/s] 52%|█████▏    | 2665/5153 [00:03<00:03, 785.69it/s] 53%|█████▎    | 2744/5153 [00:03<00:03, 785.26it/s] 55%|█████▍    | 2823/5153 [00:03<00:02, 785.51it/s] 56%|█████▋    | 2902/5153 [00:03<00:02, 785.60it/s] 58%|█████▊    | 2981/5153 [00:03<00:02, 785.17it/s] 59%|█████▉    | 3060/5153 [00:03<00:02, 785.12it/s] 61%|██████    | 3139/5153 [00:04<00:02, 785.17it/s] 62%|██████▏   | 3218/5153 [00:04<00:02, 784.91it/s] 64%|██████▍   | 3297/5153 [00:04<00:02, 785.70it/s] 66%|██████▌   | 3376/5153 [00:04<00:02, 786.06it/s] 67%|██████▋   | 3455/5153 [00:04<00:02, 785.85it/s] 69%|██████▊   | 3534/5153 [00:04<00:02, 785.95it/s] 70%|███████   | 3613/5153 [00:04<00:01, 785.03it/s] 72%|███████▏  | 3692/5153 [00:04<00:01, 784.75it/s] 73%|███████▎  | 3771/5153 [00:04<00:01, 784.67it/s] 75%|███████▍  | 3850/5153 [00:04<00:01, 784.70it/s] 76%|███████▌  | 3929/5153 [00:05<00:01, 783.89it/s] 78%|███████▊  | 4008/5153 [00:05<00:01, 783.62it/s] 79%|███████▉  | 4087/5153 [00:05<00:01, 782.61it/s] 81%|████████  | 4166/5153 [00:05<00:01, 775.56it/s] 82%|████████▏ | 4245/5153 [00:05<00:01, 777.70it/s] 84%|████████▍ | 4324/5153 [00:05<00:01, 779.32it/s] 85%|████████▌ | 4403/5153 [00:05<00:00, 780.24it/s] 87%|████████▋ | 4482/5153 [00:05<00:00, 780.90it/s] 89%|████████▊ | 4561/5153 [00:05<00:00, 782.36it/s] 90%|█████████ | 4640/5153 [00:05<00:00, 782.45it/s] 92%|█████████▏| 4719/5153 [00:06<00:00, 782.25it/s] 93%|█████████▎| 4798/5153 [00:06<00:00, 782.52it/s] 95%|█████████▍| 4877/5153 [00:06<00:00, 782.54it/s] 96%|█████████▌| 4956/5153 [00:06<00:00, 782.42it/s] 98%|█████████▊| 5035/5153 [00:06<00:00, 781.21it/s] 99%|█████████▉| 5114/5153 [00:06<00:00, 779.32it/s]100%|██████████| 5153/5153 [00:06<00:00, 780.03it/s]
+2024-04-12:04:47:09,485 INFO     [evaluator.py:379] Running loglikelihood requests
+Running loglikelihood requests:   0%|          | 0/61321 [00:00<?, ?it/s]
+Processed prompts:   0%|          | 0/61321 [00:00<?, ?it/s][A
+Processed prompts:   0%|          | 1/61321 [00:00<11:31:00,  1.48it/s][A
+Processed prompts:   0%|          | 4/61321 [00:01<3:58:01,  4.29it/s] [A
+Processed prompts:   0%|          | 7/61321 [00:01<2:59:43,  5.69it/s][A
+Processed prompts:   0%|          | 10/61321 [00:01<2:37:50,  6.47it/s][A
+Processed prompts:   0%|          | 13/61321 [00:02<2:26:11,  6.99it/s][A
+Processed prompts:   0%|          | 16/61321 [00:02<2:19:50,  7.31it/s][ATraceback (most recent call last):
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/bin/lm_eval", line 8, in <module>
+    sys.exit(cli_evaluate())
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/__main__.py", line 341, in cli_evaluate
+    results = evaluator.simple_evaluate(
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/evaluator.py", line 251, in simple_evaluate
+    results = evaluate(
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/evaluator.py", line 390, in evaluate
+    resps = getattr(lm, reqtype)(cloned_reqs)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/api/model.py", line 336, in loglikelihood
+    return self._loglikelihood_tokens(new_reqs, disable_tqdm=disable_tqdm)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/models/vllm_causallms.py", line 393, in _loglikelihood_tokens
+    outputs = self._model_generate(requests=inputs, generate=False)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/models/vllm_causallms.py", line 226, in _model_generate
+    outputs = self.model.generate(
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/entrypoints/llm.py", line 190, in generate
+    return self._run_engine(use_tqdm)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/entrypoints/llm.py", line 218, in _run_engine
+    step_outputs = self.llm_engine.step()
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/engine/llm_engine.py", line 676, in step
+    output = self.model_executor.execute_model(
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/executor/gpu_executor.py", line 114, in execute_model
+    output = self.driver_worker.execute_model(
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/worker/worker.py", line 221, in execute_model
+    output = self.model_runner.execute_model(seq_group_metadata_list,
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/worker/model_runner.py", line 673, in execute_model
+    output = self.model.sample(
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/model_executor/models/llama.py", line 360, in sample
+    next_tokens = self.sampler(logits, sampling_metadata)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/model_executor/layers/sampler.py", line 79, in forward
+    prompt_logprobs, sample_logprobs = _get_logprobs(
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/model_executor/layers/sampler.py", line 577, in _get_logprobs
+    batched_ranks_query_result = _get_ranks(
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/model_executor/layers/sampler.py", line 525, in _get_ranks
+    return (x > vals[:, None]).long().sum(1).add_(1)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1000.00 MiB. GPU 0 has a total capacty of 39.39 GiB of which 689.94 MiB is free. Including non-PyTorch memory, this process has 38.70 GiB memory in use. Of the allocated memory 36.75 GiB is allocated by PyTorch, and 577.08 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+Traceback (most recent call last):
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/bin/lm_eval", line 8, in <module>
+    sys.exit(cli_evaluate())
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/__main__.py", line 341, in cli_evaluate
+    results = evaluator.simple_evaluate(
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/evaluator.py", line 251, in simple_evaluate
+    results = evaluate(
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/utils.py", line 288, in _wrapper
+    return fn(*args, **kwargs)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/evaluator.py", line 390, in evaluate
+    resps = getattr(lm, reqtype)(cloned_reqs)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/api/model.py", line 336, in loglikelihood
+    return self._loglikelihood_tokens(new_reqs, disable_tqdm=disable_tqdm)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/models/vllm_causallms.py", line 393, in _loglikelihood_tokens
+    outputs = self._model_generate(requests=inputs, generate=False)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/models/vllm_causallms.py", line 226, in _model_generate
+    outputs = self.model.generate(
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/entrypoints/llm.py", line 190, in generate
+    return self._run_engine(use_tqdm)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/entrypoints/llm.py", line 218, in _run_engine
+    step_outputs = self.llm_engine.step()
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/engine/llm_engine.py", line 676, in step
+    output = self.model_executor.execute_model(
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/executor/gpu_executor.py", line 114, in execute_model
+    output = self.driver_worker.execute_model(
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/worker/worker.py", line 221, in execute_model
+    output = self.model_runner.execute_model(seq_group_metadata_list,
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/worker/model_runner.py", line 673, in execute_model
+    output = self.model.sample(
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/model_executor/models/llama.py", line 360, in sample
+    next_tokens = self.sampler(logits, sampling_metadata)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/model_executor/layers/sampler.py", line 79, in forward
+    prompt_logprobs, sample_logprobs = _get_logprobs(
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/model_executor/layers/sampler.py", line 577, in _get_logprobs
+    batched_ranks_query_result = _get_ranks(
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/new_eval/lib/python3.9/site-packages/vllm/model_executor/layers/sampler.py", line 525, in _get_ranks
+    return (x > vals[:, None]).long().sum(1).add_(1)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1000.00 MiB. GPU 0 has a total capacty of 39.39 GiB of which 689.94 MiB is free. Including non-PyTorch memory, this process has 38.70 GiB memory in use. Of the allocated memory 36.75 GiB is allocated by PyTorch, and 577.08 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+wandb: - 0.008 MB of 0.008 MB uploadedwandb: \ 0.008 MB of 0.025 MB uploadedwandb: | 0.025 MB of 0.025 MB uploadedwandb: 🚀 View run wv-0.5-mlp-only at: https://wandb.ai/vima-gupta/model_merging/runs/n7n5btei
+wandb: ⭐️ View project at: https://wandb.ai/vima-gupta/model_merging
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240412_044534-n7n5btei/logs
+---------------------------------------
+Begin Slurm Epilog: Apr-12-2024 04:47:59
+Job ID:        5646130
+Array Job ID:  _4294967294
+User ID:       vgupta345
+Account:       gts-ag117
+Job name:      LM_eval_all_layers
+Resources:     cpu=8,gres/gpu:a100=1,mem=80G,node=1
+Rsrc Used:     cput=00:21:04,vmem=6719388K,walltime=00:02:38,mem=2353444K,energy_used=0
+Partition:     gpu-a100
+QOS:           embers
+Nodes:         atl1-1-02-018-27-0
+---------------------------------------
