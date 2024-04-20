@@ -33,9 +33,9 @@ for TASK in "${!TASKS[@]}"; do
 #SBATCH -J LM_eval_${TASK}                                  # Job name
 #SBATCH -A gts-ag117
 #SBATCH -q embers
-#SBATCH -N1 --gres=gpu:A100:1                               # Number of nodes and GPUs
+#SBATCH -N1 --gres=gpu:H100:2                               # Number of nodes and GPUs
 #SBATCH --mem-per-gpu=80G                                   # Memory per GPU
-#SBATCH -t6:00:00                                           # Max time (6 hours)
+#SBATCH -t8:00:00                                           # Max time (6 hours)
 #SBATCH -o ${LOG_DIR}/${TASK}_%j.out                        # Output and error file
 #SBATCH --mail-type=BEGIN,END,FAIL                          # Mail events
 #SBATCH --mail-user=vgupta345@gatech.edu                    # Email for notifications
