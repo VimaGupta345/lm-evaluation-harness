@@ -1,5 +1,8 @@
 #!/bin/bash
 
+TARGET_DIR="/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/run_eval/sbatch_files"
+mkdir -p "$TARGET_DIR"
+
 # Define the tasks and corresponding few-shot values
 declare -A TASKS
 TASKS["arc-challenge"]=25
@@ -21,7 +24,7 @@ TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 # Loop over each task and create a specific SLURM batch file
 for TASK in "${!TASKS[@]}"; do
     FEWSHOT=${TASKS[$TASK]}
-    FILE_NAME="lm_eval_${TASK}.sh"
+    FILE_NAME=${TARGET_DIR}/lm_eval_${TASK}.sh"
     LOG_DIR="${BASE_DIR}/logs/${TASK}/${TIMESTAMP}"  # Directory for logs
     mkdir -p "$LOG_DIR"  # Ensure the directory exists
 
