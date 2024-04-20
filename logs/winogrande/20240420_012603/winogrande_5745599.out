@@ -1,0 +1,293 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-20-2024 01:26:44
+Job ID:    5745599
+User ID:   vgupta345
+Account:   gts-ag117-prism
+Job name:  LM_eval_winogrande
+Partition: gpu-h100
+QOS:       embers
+---------------------------------------
+Sat Apr 20 01:26:44 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.154.05             Driver Version: 535.154.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA H100 80GB HBM3          On  | 00000000:D1:00.0 Off |                    0 |
+| N/A   30C    P0              71W / 700W |      0MiB / 81559MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA H100 80GB HBM3          On  | 00000000:DF:00.0 Off |                    0 |
+| N/A   32C    P0              70W / 700W |      0MiB / 81559MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+wandb: Currently logged in as: vima-gupta. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/wandb/run-20240420_012703-55h2o49q
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run dutiful-totem-117
+wandb: ⭐️ View project at https://wandb.ai/vima-gupta/prowl
+wandb: 🚀 View run at https://wandb.ai/vima-gupta/prowl/runs/55h2o49q
+2024-04-20:01:27:04,088 INFO     [__main__.py:251] Verbosity set to INFO
+2024-04-20:01:27:12,102 INFO     [__main__.py:335] Selected Tasks: ['winogrande']
+2024-04-20:01:27:12,106 INFO     [evaluator.py:131] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-04-20:01:27:12,106 INFO     [evaluator.py:177] Initializing vllm model, with arguments: {'pretrained': 'mistralai/Mixtral-8x7B-v0.1', 'tensor_parallel_size': 2, 'dtype': 'auto', 'gpu_memory_utilization': 0.7, 'enforce_eager': True, 'mixtral_config_file': '/storage/coda1/p-apadmanabh3/0/vgupta345/prowl/mixtral_configs/none-none-2.json'}
+2024-04-20 01:27:16,287	INFO worker.py:1724 -- Started a local Ray instance.
+2024-04-20:01:30:03,170 WARNING  [evaluator.py:239] Overwriting default num_fewshot of winogrande from None to 5
+2024-04-20:01:30:03,173 INFO     [task.py:395] Building contexts for winogrande on rank 0...
+  0%|          | 0/1267 [00:00<?, ?it/s]100%|██████████| 1267/1267 [00:00<00:00, 17625.46it/s]
+2024-04-20:01:30:03,290 INFO     [evaluator.py:379] Running loglikelihood requests
+Running loglikelihood requests:   0%|          | 0/2534 [00:00<?, ?it/s]
+Processed prompts:   0%|          | 0/2534 [00:00<?, ?it/s][A
+Processed prompts:   0%|          | 1/2534 [00:09<6:33:20,  9.32s/it][A
+Processed prompts:   1%|          | 30/2534 [00:27<34:42,  1.20it/s] [A
+Processed prompts:   4%|▍         | 108/2534 [00:53<17:47,  2.27it/s][A
+Processed prompts:   9%|▉         | 225/2534 [01:17<11:17,  3.41it/s][A
+Processed prompts:  13%|█▎        | 339/2534 [01:49<10:24,  3.51it/s][A
+Processed prompts:  19%|█▉        | 491/2534 [02:26<09:05,  3.75it/s][A
+Processed prompts:  27%|██▋       | 679/2534 [03:06<07:29,  4.13it/s][A
+Processed prompts:  35%|███▍      | 885/2534 [03:44<05:58,  4.60it/s][A
+Processed prompts:  43%|████▎     | 1086/2534 [04:20<04:55,  4.91it/s][A
+Processed prompts:  51%|█████     | 1283/2534 [04:58<04:10,  5.00it/s][A
+Processed prompts:  59%|█████▉    | 1498/2534 [05:36<03:18,  5.21it/s][A
+Processed prompts:  68%|██████▊   | 1716/2534 [06:13<02:31,  5.40it/s][A
+Processed prompts:  76%|███████▋  | 1937/2534 [06:41<01:39,  6.03it/s][A
+Processed prompts:  83%|████████▎ | 2108/2534 [07:15<01:14,  5.72it/s][A
+Processed prompts:  92%|█████████▏| 2322/2534 [07:35<00:31,  6.73it/s][A
+Processed prompts:  97%|█████████▋| 2455/2534 [07:46<00:11,  6.73it/s][A
+Processed prompts:  97%|█████████▋| 2456/2534 [07:46<00:10,  7.48it/s][AProcessed prompts: 100%|██████████| 2534/2534 [07:46<00:00,  5.43it/s]
+Running loglikelihood requests:   0%|          | 1/2534 [07:47<328:39:58, 467.11s/it]Running loglikelihood requests:  37%|███▋      | 930/2534 [07:47<09:24,  2.84it/s]   Running loglikelihood requests:  75%|███████▌  | 1912/2534 [07:47<01:27,  7.13it/s]Running loglikelihood requests: 100%|██████████| 2534/2534 [07:47<00:00,  5.42it/s]
+wandb: - 0.020 MB of 0.020 MB uploadedwandb: \ 0.020 MB of 0.020 MB uploadedwandb: | 0.020 MB of 0.020 MB uploadedwandb: / 0.020 MB of 0.020 MB uploadedwandb: WARNING No program path found, not creating job artifact. See https://docs.wandb.ai/guides/launch/create-job
+wandb: - 0.020 MB of 0.020 MB uploadedwandb: \ 0.020 MB of 0.020 MB uploadedwandb: | 0.029 MB of 0.029 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:        winogrande/acc ▁
+wandb: winogrande/acc_stderr ▁
+wandb: 
+wandb: Run summary:
+wandb:        winogrande/acc 0.75927
+wandb: winogrande/acc_stderr 0.01202
+wandb:      winogrande/alias winogrande
+wandb: 
+wandb: 🚀 View run dutiful-totem-117 at: https://wandb.ai/vima-gupta/prowl/runs/55h2o49q
+wandb: Synced 5 W&B file(s), 1 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240420_012703-55h2o49q/logs
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/wandb/run-20240420_013804-1g478l4y
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run divine-feather-124
+wandb: ⭐️ View project at https://wandb.ai/vima-gupta/prowl
+wandb: 🚀 View run at https://wandb.ai/vima-gupta/prowl/runs/1g478l4y
+wandb: WARNING No program path found, not creating job artifact. See https://docs.wandb.ai/guides/launch/create-job
+wandb: - 0.058 MB of 0.061 MB uploadedwandb: \ 0.058 MB of 0.061 MB uploadedwandb: | 0.086 MB of 0.086 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:           ATTN_COMPUTATION_execution_time_25th_percentile ▁
+wandb:           ATTN_COMPUTATION_execution_time_75th_percentile ▁
+wandb:           ATTN_COMPUTATION_execution_time_95th_percentile ▁
+wandb:         ATTN_COMPUTATION_execution_time_99.9th_percentile ▁
+wandb:           ATTN_COMPUTATION_execution_time_99th_percentile ▁
+wandb:                     ATTN_COMPUTATION_execution_time_count ▁
+wandb:                       ATTN_COMPUTATION_execution_time_max ▁
+wandb:                      ATTN_COMPUTATION_execution_time_mean ▁
+wandb:                    ATTN_COMPUTATION_execution_time_median ▁
+wandb:                       ATTN_COMPUTATION_execution_time_min ▁
+wandb:                       ATTN_COMPUTATION_execution_time_sum ▁
+wandb:         EXPERT_COMPUTATION_execution_time_25th_percentile ▁
+wandb:         EXPERT_COMPUTATION_execution_time_75th_percentile ▁
+wandb:         EXPERT_COMPUTATION_execution_time_95th_percentile ▁
+wandb:       EXPERT_COMPUTATION_execution_time_99.9th_percentile ▁
+wandb:         EXPERT_COMPUTATION_execution_time_99th_percentile ▁
+wandb:                   EXPERT_COMPUTATION_execution_time_count ▁
+wandb:                     EXPERT_COMPUTATION_execution_time_max ▁
+wandb:                    EXPERT_COMPUTATION_execution_time_mean ▁
+wandb:                  EXPERT_COMPUTATION_execution_time_median ▁
+wandb:                     EXPERT_COMPUTATION_execution_time_min ▁
+wandb:                     EXPERT_COMPUTATION_execution_time_sum ▁
+wandb:       POST_ATTN_PROJECTION_execution_time_25th_percentile ▁
+wandb:       POST_ATTN_PROJECTION_execution_time_75th_percentile ▁
+wandb:       POST_ATTN_PROJECTION_execution_time_95th_percentile ▁
+wandb:     POST_ATTN_PROJECTION_execution_time_99.9th_percentile ▁
+wandb:       POST_ATTN_PROJECTION_execution_time_99th_percentile ▁
+wandb:                 POST_ATTN_PROJECTION_execution_time_count ▁
+wandb:                   POST_ATTN_PROJECTION_execution_time_max ▁
+wandb:                  POST_ATTN_PROJECTION_execution_time_mean ▁
+wandb:                POST_ATTN_PROJECTION_execution_time_median ▁
+wandb:                   POST_ATTN_PROJECTION_execution_time_min ▁
+wandb:                   POST_ATTN_PROJECTION_execution_time_sum ▁
+wandb:        PRE_ATTN_PROJECTION_execution_time_25th_percentile ▁
+wandb:        PRE_ATTN_PROJECTION_execution_time_75th_percentile ▁
+wandb:        PRE_ATTN_PROJECTION_execution_time_95th_percentile ▁
+wandb:      PRE_ATTN_PROJECTION_execution_time_99.9th_percentile ▁
+wandb:        PRE_ATTN_PROJECTION_execution_time_99th_percentile ▁
+wandb:                  PRE_ATTN_PROJECTION_execution_time_count ▁
+wandb:                    PRE_ATTN_PROJECTION_execution_time_max ▁
+wandb:                   PRE_ATTN_PROJECTION_execution_time_mean ▁
+wandb:                 PRE_ATTN_PROJECTION_execution_time_median ▁
+wandb:                    PRE_ATTN_PROJECTION_execution_time_min ▁
+wandb:                    PRE_ATTN_PROJECTION_execution_time_sum ▁
+wandb:         SCHEDULE_ITERATION_execution_time_25th_percentile ▁
+wandb:         SCHEDULE_ITERATION_execution_time_75th_percentile ▁
+wandb:         SCHEDULE_ITERATION_execution_time_95th_percentile ▁
+wandb:       SCHEDULE_ITERATION_execution_time_99.9th_percentile ▁
+wandb:         SCHEDULE_ITERATION_execution_time_99th_percentile ▁
+wandb:                   SCHEDULE_ITERATION_execution_time_count ▁
+wandb:                     SCHEDULE_ITERATION_execution_time_max ▁
+wandb:                    SCHEDULE_ITERATION_execution_time_mean ▁
+wandb:                  SCHEDULE_ITERATION_execution_time_median ▁
+wandb:                     SCHEDULE_ITERATION_execution_time_min ▁
+wandb:                     SCHEDULE_ITERATION_execution_time_sum ▁
+wandb:     TOTAL_ATTN_COMPUTATION_execution_time_25th_percentile ▁
+wandb:     TOTAL_ATTN_COMPUTATION_execution_time_75th_percentile ▁
+wandb:     TOTAL_ATTN_COMPUTATION_execution_time_95th_percentile ▁
+wandb:   TOTAL_ATTN_COMPUTATION_execution_time_99.9th_percentile ▁
+wandb:     TOTAL_ATTN_COMPUTATION_execution_time_99th_percentile ▁
+wandb:               TOTAL_ATTN_COMPUTATION_execution_time_count ▁
+wandb:                 TOTAL_ATTN_COMPUTATION_execution_time_max ▁
+wandb:                TOTAL_ATTN_COMPUTATION_execution_time_mean ▁
+wandb:              TOTAL_ATTN_COMPUTATION_execution_time_median ▁
+wandb:                 TOTAL_ATTN_COMPUTATION_execution_time_min ▁
+wandb:                 TOTAL_ATTN_COMPUTATION_execution_time_sum ▁
+wandb:   TOTAL_EXPERT_COMPUTATION_execution_time_25th_percentile ▁
+wandb:   TOTAL_EXPERT_COMPUTATION_execution_time_75th_percentile ▁
+wandb:   TOTAL_EXPERT_COMPUTATION_execution_time_95th_percentile ▁
+wandb: TOTAL_EXPERT_COMPUTATION_execution_time_99.9th_percentile ▁
+wandb:   TOTAL_EXPERT_COMPUTATION_execution_time_99th_percentile ▁
+wandb:             TOTAL_EXPERT_COMPUTATION_execution_time_count ▁
+wandb:               TOTAL_EXPERT_COMPUTATION_execution_time_max ▁
+wandb:              TOTAL_EXPERT_COMPUTATION_execution_time_mean ▁
+wandb:            TOTAL_EXPERT_COMPUTATION_execution_time_median ▁
+wandb:               TOTAL_EXPERT_COMPUTATION_execution_time_min ▁
+wandb:               TOTAL_EXPERT_COMPUTATION_execution_time_sum ▁
+wandb:           WORKER_ITERATION_execution_time_25th_percentile ▁
+wandb:           WORKER_ITERATION_execution_time_75th_percentile ▁
+wandb:           WORKER_ITERATION_execution_time_95th_percentile ▁
+wandb:         WORKER_ITERATION_execution_time_99.9th_percentile ▁
+wandb:           WORKER_ITERATION_execution_time_99th_percentile ▁
+wandb:                     WORKER_ITERATION_execution_time_count ▁
+wandb:                       WORKER_ITERATION_execution_time_max ▁
+wandb:                      WORKER_ITERATION_execution_time_mean ▁
+wandb:                    WORKER_ITERATION_execution_time_median ▁
+wandb:                       WORKER_ITERATION_execution_time_min ▁
+wandb:                       WORKER_ITERATION_execution_time_sum ▁
+wandb: 
+wandb: Run summary:
+wandb:           ATTN_COMPUTATION_execution_time_25th_percentile 0.31632
+wandb:           ATTN_COMPUTATION_execution_time_75th_percentile 0.52994
+wandb:           ATTN_COMPUTATION_execution_time_95th_percentile 0.55822
+wandb:         ATTN_COMPUTATION_execution_time_99.9th_percentile 15.13486
+wandb:           ATTN_COMPUTATION_execution_time_99th_percentile 13.777
+wandb:                     ATTN_COMPUTATION_execution_time_count 481.0
+wandb:                       ATTN_COMPUTATION_execution_time_max 15.23725
+wandb:                      ATTN_COMPUTATION_execution_time_mean 0.74089
+wandb:                    ATTN_COMPUTATION_execution_time_median 0.48336
+wandb:                       ATTN_COMPUTATION_execution_time_min 0.10093
+wandb:                       ATTN_COMPUTATION_execution_time_sum 356.36915
+wandb:         EXPERT_COMPUTATION_execution_time_25th_percentile 11.10061
+wandb:         EXPERT_COMPUTATION_execution_time_75th_percentile 18.41196
+wandb:         EXPERT_COMPUTATION_execution_time_95th_percentile 19.08687
+wandb:       EXPERT_COMPUTATION_execution_time_99.9th_percentile 29.69565
+wandb:         EXPERT_COMPUTATION_execution_time_99th_percentile 26.92353
+wandb:                   EXPERT_COMPUTATION_execution_time_count 481.0
+wandb:                     EXPERT_COMPUTATION_execution_time_max 386.17892
+wandb:                    EXPERT_COMPUTATION_execution_time_mean 15.77011
+wandb:                  EXPERT_COMPUTATION_execution_time_median 17.40923
+wandb:                     EXPERT_COMPUTATION_execution_time_min 3.43053
+wandb:                     EXPERT_COMPUTATION_execution_time_sum 7585.42097
+wandb:       POST_ATTN_PROJECTION_execution_time_25th_percentile 0.99104
+wandb:       POST_ATTN_PROJECTION_execution_time_75th_percentile 1.60159
+wandb:       POST_ATTN_PROJECTION_execution_time_95th_percentile 1.63722
+wandb:     POST_ATTN_PROJECTION_execution_time_99.9th_percentile 1.82394
+wandb:       POST_ATTN_PROJECTION_execution_time_99th_percentile 1.77004
+wandb:                 POST_ATTN_PROJECTION_execution_time_count 481.0
+wandb:                   POST_ATTN_PROJECTION_execution_time_max 8.22186
+wandb:                  POST_ATTN_PROJECTION_execution_time_mean 1.30897
+wandb:                POST_ATTN_PROJECTION_execution_time_median 1.4993
+wandb:                   POST_ATTN_PROJECTION_execution_time_min 0.32157
+wandb:                   POST_ATTN_PROJECTION_execution_time_sum 629.61603
+wandb:        PRE_ATTN_PROJECTION_execution_time_25th_percentile 0.80011
+wandb:        PRE_ATTN_PROJECTION_execution_time_75th_percentile 1.35121
+wandb:        PRE_ATTN_PROJECTION_execution_time_95th_percentile 1.38403
+wandb:      PRE_ATTN_PROJECTION_execution_time_99.9th_percentile 57.45493
+wandb:        PRE_ATTN_PROJECTION_execution_time_99th_percentile 52.93162
+wandb:                  PRE_ATTN_PROJECTION_execution_time_count 481.0
+wandb:                    PRE_ATTN_PROJECTION_execution_time_max 59.45347
+wandb:                   PRE_ATTN_PROJECTION_execution_time_mean 2.37777
+wandb:                 PRE_ATTN_PROJECTION_execution_time_median 1.24234
+wandb:                    PRE_ATTN_PROJECTION_execution_time_min 0.23958
+wandb:                    PRE_ATTN_PROJECTION_execution_time_sum 1143.70905
+wandb:         SCHEDULE_ITERATION_execution_time_25th_percentile 19.94544
+wandb:         SCHEDULE_ITERATION_execution_time_75th_percentile 37.52475
+wandb:         SCHEDULE_ITERATION_execution_time_95th_percentile 37.97776
+wandb:       SCHEDULE_ITERATION_execution_time_99.9th_percentile 37.97776
+wandb:         SCHEDULE_ITERATION_execution_time_99th_percentile 37.97776
+wandb:                   SCHEDULE_ITERATION_execution_time_count 16.0
+wandb:                     SCHEDULE_ITERATION_execution_time_max 39.92093
+wandb:                    SCHEDULE_ITERATION_execution_time_mean 29.16407
+wandb:                  SCHEDULE_ITERATION_execution_time_median 31.3433
+wandb:                     SCHEDULE_ITERATION_execution_time_min 9.31693
+wandb:                     SCHEDULE_ITERATION_execution_time_sum 466.62517
+wandb:     TOTAL_ATTN_COMPUTATION_execution_time_25th_percentile 2.87197
+wandb:     TOTAL_ATTN_COMPUTATION_execution_time_75th_percentile 4.78268
+wandb:     TOTAL_ATTN_COMPUTATION_execution_time_95th_percentile 4.89885
+wandb:   TOTAL_ATTN_COMPUTATION_execution_time_99.9th_percentile 79.91799
+wandb:     TOTAL_ATTN_COMPUTATION_execution_time_99th_percentile 73.7736
+wandb:               TOTAL_ATTN_COMPUTATION_execution_time_count 481.0
+wandb:                 TOTAL_ATTN_COMPUTATION_execution_time_max 82.12724
+wandb:                TOTAL_ATTN_COMPUTATION_execution_time_mean 5.5622
+wandb:              TOTAL_ATTN_COMPUTATION_execution_time_median 4.45934
+wandb:                 TOTAL_ATTN_COMPUTATION_execution_time_min 0.8999
+wandb:                 TOTAL_ATTN_COMPUTATION_execution_time_sum 2675.41904
+wandb:   TOTAL_EXPERT_COMPUTATION_execution_time_25th_percentile 11.83428
+wandb:   TOTAL_EXPERT_COMPUTATION_execution_time_75th_percentile 19.43354
+wandb:   TOTAL_EXPERT_COMPUTATION_execution_time_95th_percentile 20.14589
+wandb: TOTAL_EXPERT_COMPUTATION_execution_time_99.9th_percentile 45.01523
+wandb:   TOTAL_EXPERT_COMPUTATION_execution_time_99th_percentile 37.44978
+wandb:             TOTAL_EXPERT_COMPUTATION_execution_time_count 481.0
+wandb:               TOTAL_EXPERT_COMPUTATION_execution_time_max 394.6033
+wandb:              TOTAL_EXPERT_COMPUTATION_execution_time_mean 16.85583
+wandb:            TOTAL_EXPERT_COMPUTATION_execution_time_median 18.37517
+wandb:               TOTAL_EXPERT_COMPUTATION_execution_time_min 3.63626
+wandb:               TOTAL_EXPERT_COMPUTATION_execution_time_sum 8107.65453
+wandb:           WORKER_ITERATION_execution_time_25th_percentile 1338.09455
+wandb:           WORKER_ITERATION_execution_time_75th_percentile 2032.45975
+wandb:           WORKER_ITERATION_execution_time_95th_percentile 2085.99669
+wandb:         WORKER_ITERATION_execution_time_99.9th_percentile 2085.99669
+wandb:           WORKER_ITERATION_execution_time_99th_percentile 2085.99669
+wandb:                     WORKER_ITERATION_execution_time_count 15.0
+wandb:                       WORKER_ITERATION_execution_time_max 2165.87671
+wandb:                      WORKER_ITERATION_execution_time_mean 1718.63953
+wandb:                    WORKER_ITERATION_execution_time_median 1992.21434
+wandb:                       WORKER_ITERATION_execution_time_min 712.1076
+wandb:                       WORKER_ITERATION_execution_time_sum 25779.59296
+wandb: 
+wandb: 🚀 View run divine-feather-124 at: https://wandb.ai/vima-gupta/prowl/runs/1g478l4y
+wandb: Synced 5 W&B file(s), 8 media file(s), 8 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240420_013804-1g478l4y/logs
+---------------------------------------
+Begin Slurm Epilog: Apr-20-2024 01:38:30
+Job ID:        5745599
+Array Job ID:  _4294967294
+User ID:       vgupta345
+Account:       gts-ag117-prism
+Job name:      LM_eval_winogrande
+Resources:     cpu=16,gres/gpu:h100=2,mem=160G,node=1
+Rsrc Used:     cput=03:08:16,vmem=0,walltime=00:11:46,mem=19939048K,energy_used=0
+Partition:     gpu-h100
+QOS:           embers
+Nodes:         atl1-1-03-010-1-0
+---------------------------------------
