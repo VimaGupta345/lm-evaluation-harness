@@ -1,0 +1,28 @@
+INFO 04-20 01:27:13 config.py:476] Custom all-reduce kernels are temporarily disabled due to stability issues. We will re-enable them once the issues are resolved.
+INFO 04-20 01:27:21 llm_engine.py:90] Initializing an LLM engine (v0.3.3) with config: model='mistralai/Mixtral-8x7B-v0.1', tokenizer='mistralai/Mixtral-8x7B-v0.1', tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=2, disable_custom_all_reduce=True, quantization=None, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, seed=1234)
+INFO 04-20 01:27:45 weight_utils.py:163] Using model weights format ['*.safetensors']
+[36m(RayWorkerVllm pid=542043)[0m INFO 04-20 01:27:45 weight_utils.py:163] Using model weights format ['*.safetensors']
+INFO 04-20 01:29:55 fused_moe.py:241] Using configuration from /storage/coda1/p-apadmanabh3/0/vgupta345/prowl/vllm/model_executor/layers/fused_moe/configs/E=8,N=7168,device_name=NVIDIA_H100_80GB_HBM3.json for MoE layer.
+[36m(RayWorkerVllm pid=542043)[0m INFO 04-20 01:29:55 fused_moe.py:241] Using configuration from /storage/coda1/p-apadmanabh3/0/vgupta345/prowl/vllm/model_executor/layers/fused_moe/configs/E=8,N=7168,device_name=NVIDIA_H100_80GB_HBM3.json for MoE layer.
+INFO 04-20 01:29:58 llm_engine.py:382] # GPU blocks: 7435, # CPU blocks: 4096
+vllm (pretrained=mistralai/Mixtral-8x7B-v0.1,tensor_parallel_size=2,dtype=auto,gpu_memory_utilization=0.7,enforce_eager=True,mixtral_config_file=/storage/coda1/p-apadmanabh3/0/vgupta345/prowl/mixtral_configs/none-none-2.json), gen_kwargs: (None), limit: None, num_fewshot: 5, batch_size: auto
+|  Tasks   |Version|Filter|n-shot|Metric|Value |   |Stderr|
+|----------|------:|------|-----:|------|-----:|---|-----:|
+|winogrande|      1|none  |     5|acc   |0.7593|±  | 0.012|
+
+INFO 04-20 01:38:06 cdf_sketch.py:71] PRE_ATTN_PROJECTION_execution_time: PRE_ATTN_PROJECTION stats: min: 0.23958399891853333, max: 59.45347213745117, mean: 2.3777734984231342, 25th percentile: 0.8001143897618219, median: 1.2423435708284598, 75th percentile: 1.3512088015045334, 95th percentile: 1.3840301039019316, 99th percentile: 52.93161635500444 99.9th percentile: 57.45493206664411 count: 481.0 sum: 1143.7090527415276
+Reached here
+INFO 04-20 01:38:11 cdf_sketch.py:71] ATTN_COMPUTATION_execution_time: ATTN_COMPUTATION stats: min: 0.10092800110578537, max: 15.237248420715332, mean: 0.7408922098561532, 25th percentile: 0.3163200113535738, median: 0.4833565290091586, 75th percentile: 0.5299351111800804, 95th percentile: 0.5582208008990526, 99th percentile: 13.776997785638752 99.9th percentile: 15.134855661118525 count: 481.0 sum: 356.3691529408097
+Reached here
+INFO 04-20 01:38:11 cdf_sketch.py:71] POST_ATTN_PROJECTION_execution_time: POST_ATTN_PROJECTION stats: min: 0.32156801223754883, max: 8.221856117248535, mean: 1.3089730407492783, 25th percentile: 0.9910398802794488, median: 1.4993019528112006, 75th percentile: 1.60159443832717, 95th percentile: 1.6372199718286593, 99th percentile: 1.7700356547921128 99.9th percentile: 1.8239412839793383 count: 481.0 sum: 629.6160326004028
+Reached here
+INFO 04-20 01:38:11 cdf_sketch.py:71] TOTAL_ATTN_COMPUTATION_execution_time: TOTAL_ATTN_COMPUTATION stats: min: 0.8999040126800537, max: 82.12723541259766, mean: 5.562201747279653, 25th percentile: 2.871974727891617, median: 4.459336545415816, 75th percentile: 4.782675039520193, 95th percentile: 4.898847775788485, 99th percentile: 73.77359923544194 99.9th percentile: 79.91798811873706 count: 481.0 sum: 2675.419040441513
+Reached here
+INFO 04-20 01:38:11 cdf_sketch.py:71] EXPERT_COMPUTATION_execution_time: EXPERT_COMPUTATION stats: min: 3.430527925491333, max: 386.1789245605469, mean: 15.770105975085633, 25th percentile: 11.10061267047728, median: 17.40922872890176, 75th percentile: 18.4119603230175, 95th percentile: 19.08686654325755, 99th percentile: 26.923529251938415 99.9th percentile: 29.695651778726894 count: 481.0 sum: 7585.42097401619
+Reached here
+INFO 04-20 01:38:11 cdf_sketch.py:71] TOTAL_EXPERT_COMPUTATION_execution_time: TOTAL_EXPERT_COMPUTATION stats: min: 3.636255979537964, max: 394.6033020019531, mean: 16.855830632227622, 25th percentile: 11.834279042056252, median: 18.375173189504977, 75th percentile: 19.43354096623919, 95th percentile: 20.145894102423608, 99th percentile: 37.449775214686134 99.9th percentile: 45.0152251403878 count: 481.0 sum: 8107.654534101486
+Reached here
+INFO 04-20 01:38:12 cdf_sketch.py:71] SCHEDULE_ITERATION_execution_time: SCHEDULE_ITERATION stats: min: 9.316929217020515, max: 39.920932449022075, mean: 29.164072915065844, 25th percentile: 19.945439040347992, median: 31.34330376758515, 75th percentile: 37.524749739640455, 95th percentile: 37.9777595100358, 99th percentile: 37.9777595100358 99.9th percentile: 37.9777595100358 count: 16.0 sum: 466.6251666410535
+Reached here
+INFO 04-20 01:38:12 cdf_sketch.py:71] WORKER_ITERATION_execution_time: WORKER_ITERATION stats: min: 712.1076049804688, max: 2165.876708984375, mean: 1718.639530436198, 25th percentile: 1338.0945450550041, median: 1992.2143391572147, 75th percentile: 2032.459751978447, 95th percentile: 2085.996687658305, 99th percentile: 2085.996687658305 99.9th percentile: 2085.996687658305 count: 15.0 sum: 25779.59295654297
+Reached here

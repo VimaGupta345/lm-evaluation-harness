@@ -1,0 +1,7 @@
+INFO 04-20 01:27:20 config.py:476] Custom all-reduce kernels are temporarily disabled due to stability issues. We will re-enable them once the issues are resolved.
+INFO 04-20 01:27:29 llm_engine.py:90] Initializing an LLM engine (v0.3.3) with config: model='mistralai/Mixtral-8x7B-v0.1', tokenizer='mistralai/Mixtral-8x7B-v0.1', tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=2, disable_custom_all_reduce=True, quantization=None, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, seed=1234)
+[36m(RayWorkerVllm pid=227164)[0m INFO 04-20 01:27:46 weight_utils.py:163] Using model weights format ['*.safetensors']
+INFO 04-20 01:27:46 weight_utils.py:163] Using model weights format ['*.safetensors']
+INFO 04-20 01:30:37 fused_moe.py:241] Using configuration from /storage/coda1/p-apadmanabh3/0/vgupta345/prowl/vllm/model_executor/layers/fused_moe/configs/E=8,N=7168,device_name=NVIDIA_H100_80GB_HBM3.json for MoE layer.
+[36m(RayWorkerVllm pid=227164)[0m INFO 04-20 01:30:37 fused_moe.py:241] Using configuration from /storage/coda1/p-apadmanabh3/0/vgupta345/prowl/vllm/model_executor/layers/fused_moe/configs/E=8,N=7168,device_name=NVIDIA_H100_80GB_HBM3.json for MoE layer.
+INFO 04-20 01:30:40 llm_engine.py:382] # GPU blocks: 7435, # CPU blocks: 4096

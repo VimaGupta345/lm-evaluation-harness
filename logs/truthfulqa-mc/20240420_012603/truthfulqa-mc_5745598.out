@@ -1,0 +1,74 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-20-2024 01:26:44
+Job ID:    5745598
+User ID:   vgupta345
+Account:   gts-ag117-prism
+Job name:  LM_eval_truthfulqa-mc
+Partition: gpu-h100
+QOS:       embers
+---------------------------------------
+Sat Apr 20 01:26:44 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.154.05             Driver Version: 535.154.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA H100 80GB HBM3          On  | 00000000:9D:00.0 Off |                    0 |
+| N/A   30C    P0              74W / 700W |      0MiB / 81559MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA H100 80GB HBM3          On  | 00000000:C3:00.0 Off |                    0 |
+| N/A   27C    P0              70W / 700W |      0MiB / 81559MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+wandb: Currently logged in as: vima-gupta. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/wandb/run-20240420_012703-r0ec6010
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run effortless-sea-117
+wandb: ⭐️ View project at https://wandb.ai/vima-gupta/prowl
+wandb: 🚀 View run at https://wandb.ai/vima-gupta/prowl/runs/r0ec6010
+2024-04-20:01:27:04,088 INFO     [__main__.py:251] Verbosity set to INFO
+2024-04-20:01:27:12,102 ERROR    [__main__.py:301] Tasks were not found: truthfulqa-mc
+                                               Try `lm-eval --tasks list` for list of available tasks
+Traceback (most recent call last):
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/prowl_new/bin/lm-eval", line 8, in <module>
+    sys.exit(cli_evaluate())
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/__main__.py", line 305, in cli_evaluate
+    raise ValueError(
+ValueError: Tasks not found: truthfulqa-mc. Try `lm-eval --tasks list` for list of available tasks, or '--verbosity DEBUG' to troubleshoot task registration issues.
+Traceback (most recent call last):
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/prowl_new/bin/lm-eval", line 8, in <module>
+    sys.exit(cli_evaluate())
+  File "/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/lm_eval/__main__.py", line 305, in cli_evaluate
+    raise ValueError(
+ValueError: Tasks not found: truthfulqa-mc. Try `lm-eval --tasks list` for list of available tasks, or '--verbosity DEBUG' to troubleshoot task registration issues.
+wandb: WARNING No program path found, not creating job artifact. See https://docs.wandb.ai/guides/launch/create-job
+wandb: - 0.013 MB of 0.013 MB uploadedwandb: 🚀 View run effortless-sea-117 at: https://wandb.ai/vima-gupta/prowl/runs/r0ec6010
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240420_012703-r0ec6010/logs
+---------------------------------------
+Begin Slurm Epilog: Apr-20-2024 01:27:18
+Job ID:        5745598
+Array Job ID:  _4294967294
+User ID:       vgupta345
+Account:       gts-ag117-prism
+Job name:      LM_eval_truthfulqa-mc
+Resources:     cpu=16,gres/gpu:h100=2,mem=160G,node=1
+Rsrc Used:     cput=00:09:04,vmem=0,walltime=00:00:34,mem=714360K,energy_used=0
+Partition:     gpu-h100
+QOS:           embers
+Nodes:         atl1-1-03-010-1-0
+---------------------------------------

@@ -5,9 +5,9 @@ mkdir -p "$TARGET_DIR"
 
 # Define the tasks and corresponding few-shot values
 declare -A TASKS
-TASKS["arc-challenge"]=25
+TASKS["arc_challenge"]=25
 TASKS["hellaswag"]=10
-TASKS["truthfulqa-mc"]=0
+TASKS["truthfulqa_mc"]=0
 TASKS["mmlu"]=5
 TASKS["winogrande"]=5
 TASKS["gsm8k"]=5
@@ -24,8 +24,8 @@ TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 # Loop over each task and create a specific SLURM batch file
 for TASK in "${!TASKS[@]}"; do
     FEWSHOT=${TASKS[$TASK]}
-    FILE_NAME="${TARGET_DIR}/lm_eval_${TASK}.sh"
-    LOG_DIR="${BASE_DIR}/logs/${TASK}/${TIMESTAMP}"  # Directory for logs
+    FILE_NAME="${TARGET_DIR}/lm_eval_${TASK}.sbatch"
+    LOG_DIR="${BASE_DIR}/logs/${TASK}/${TIMESTAMP}_{MIXTRAL_CONFIG_PATH}"  # Directory for logs
     mkdir -p "$LOG_DIR"  # Ensure the directory exists
 
     cat <<EOF >$FILE_NAME
@@ -51,7 +51,7 @@ lm-eval --model vllm \
     --model_args pretrained="mistralai/Mixtral-8x7B-v0.1",tensor_parallel_size=2,dtype=auto,gpu_memory_utilization=0.7,enforce_eager=True,mixtral_config_file="$MIXTRAL_CONFIG_PATH" \
     --tasks $TASK \
     --num_fewshot $FEWSHOT \
-    --batch_size auto \
+    --batch_size 128 \
     --wandb_args project=prowl,group=$TASK \
     >> "${LOG_DIR}/lm_eval_${TASK}.log"
 

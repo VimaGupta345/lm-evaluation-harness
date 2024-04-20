@@ -1,0 +1,31 @@
+Config file not provided.
+INFO 04-19 23:52:46 config.py:476] Custom all-reduce kernels are temporarily disabled due to stability issues. We will re-enable them once the issues are resolved.
+INFO 04-19 23:52:51 llm_engine.py:90] Initializing an LLM engine (v0.3.3) with config: model='mistralai/Mixtral-8x7B-v0.1', tokenizer='mistralai/Mixtral-8x7B-v0.1', tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=2, disable_custom_all_reduce=True, quantization=None, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, seed=1234)
+INFO 04-19 23:53:07 weight_utils.py:163] Using model weights format ['*.safetensors']
+[36m(RayWorkerVllm pid=2709927)[0m INFO 04-19 23:53:07 weight_utils.py:163] Using model weights format ['*.safetensors']
+INFO 04-19 23:55:22 fused_moe.py:241] Using configuration from /storage/coda1/p-apadmanabh3/0/vgupta345/prowl/vllm/model_executor/layers/fused_moe/configs/E=8,N=7168,device_name=NVIDIA_H100_80GB_HBM3.json for MoE layer.
+[36m(RayWorkerVllm pid=2709927)[0m INFO 04-19 23:55:22 fused_moe.py:241] Using configuration from /storage/coda1/p-apadmanabh3/0/vgupta345/prowl/vllm/model_executor/layers/fused_moe/configs/E=8,N=7168,device_name=NVIDIA_H100_80GB_HBM3.json for MoE layer.
+An error occurred: [Errno 2] No such file or directory: '/usr/local/pace-apps/spack/packages/linux-rhel7-x86_64/gcc-4.8.5/gcc-10.3.0-o57x6h2gubo7bzh7evmy4mvibdqrlghr/bin/gcc'
+An error occurred: [Errno 2] No such file or directory: '/usr/local/pace-apps/spack/packages/linux-rhel7-x86_64/gcc-4.8.5/gcc-10.3.0-o57x6h2gubo7bzh7evmy4mvibdqrlghr/bin/gcc'
+[36m(RayWorkerVllm pid=2709927)[0m An error occurred: [Errno 2] No such file or directory: '/usr/local/pace-apps/spack/packages/linux-rhel7-x86_64/gcc-4.8.5/gcc-10.3.0-o57x6h2gubo7bzh7evmy4mvibdqrlghr/bin/gcc'
+[36m(RayWorkerVllm pid=2709927)[0m An error occurred: [Errno 2] No such file or directory: '/usr/local/pace-apps/spack/packages/linux-rhel7-x86_64/gcc-4.8.5/gcc-10.3.0-o57x6h2gubo7bzh7evmy4mvibdqrlghr/bin/gcc'
+Config file not provided.
+INFO 04-20 00:04:23 config.py:476] Custom all-reduce kernels are temporarily disabled due to stability issues. We will re-enable them once the issues are resolved.
+INFO 04-20 00:04:29 llm_engine.py:90] Initializing an LLM engine (v0.3.3) with config: model='mistralai/Mixtral-8x7B-v0.1', tokenizer='mistralai/Mixtral-8x7B-v0.1', tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=2, disable_custom_all_reduce=True, quantization=None, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, seed=1234)
+INFO 04-20 00:05:10 weight_utils.py:163] Using model weights format ['*.safetensors']
+[36m(RayWorkerVllm pid=2767612)[0m INFO 04-20 00:05:14 weight_utils.py:163] Using model weights format ['*.safetensors']
+INFO 04-20 00:05:56 fused_moe.py:241] Using configuration from /storage/coda1/p-apadmanabh3/0/vgupta345/prowl/vllm/model_executor/layers/fused_moe/configs/E=8,N=7168,device_name=NVIDIA_H100_80GB_HBM3.json for MoE layer.
+[36m(RayWorkerVllm pid=2767612)[0m INFO 04-20 00:05:56 fused_moe.py:241] Using configuration from /storage/coda1/p-apadmanabh3/0/vgupta345/prowl/vllm/model_executor/layers/fused_moe/configs/E=8,N=7168,device_name=NVIDIA_H100_80GB_HBM3.json for MoE layer.
+[36m(RayWorkerVllm pid=2767612)[0m An error occurred: [Errno 2] No such file or directory: '/usr/local/pace-apps/spack/packages/linux-rhel7-x86_64/gcc-4.8.5/gcc-10.3.0-o57x6h2gubo7bzh7evmy4mvibdqrlghr/bin/gcc'
+[36m(RayWorkerVllm pid=2767612)[0m An error occurred: [Errno 2] No such file or directory: '/usr/local/pace-apps/spack/packages/linux-rhel7-x86_64/gcc-4.8.5/gcc-10.3.0-o57x6h2gubo7bzh7evmy4mvibdqrlghr/bin/gcc'
+An error occurred: [Errno 2] No such file or directory: '/usr/local/pace-apps/spack/packages/linux-rhel7-x86_64/gcc-4.8.5/gcc-10.3.0-o57x6h2gubo7bzh7evmy4mvibdqrlghr/bin/gcc'
+An error occurred: [Errno 2] No such file or directory: '/usr/local/pace-apps/spack/packages/linux-rhel7-x86_64/gcc-4.8.5/gcc-10.3.0-o57x6h2gubo7bzh7evmy4mvibdqrlghr/bin/gcc'
+Config file not provided.
+INFO 04-20 00:06:36 config.py:476] Custom all-reduce kernels are temporarily disabled due to stability issues. We will re-enable them once the issues are resolved.
+INFO 04-20 00:06:41 llm_engine.py:90] Initializing an LLM engine (v0.3.3) with config: model='mistralai/Mixtral-8x7B-v0.1', tokenizer='mistralai/Mixtral-8x7B-v0.1', tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=2, disable_custom_all_reduce=True, quantization=None, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, seed=1234)
+INFO 04-20 00:06:54 weight_utils.py:163] Using model weights format ['*.safetensors']
+[36m(RayWorkerVllm pid=2777753)[0m INFO 04-20 00:06:55 weight_utils.py:163] Using model weights format ['*.safetensors']
+INFO 04-20 00:07:34 fused_moe.py:241] Using configuration from /storage/coda1/p-apadmanabh3/0/vgupta345/prowl/vllm/model_executor/layers/fused_moe/configs/E=8,N=7168,device_name=NVIDIA_H100_80GB_HBM3.json for MoE layer.
+[36m(RayWorkerVllm pid=2777753)[0m INFO 04-20 00:07:34 fused_moe.py:241] Using configuration from /storage/coda1/p-apadmanabh3/0/vgupta345/prowl/vllm/model_executor/layers/fused_moe/configs/E=8,N=7168,device_name=NVIDIA_H100_80GB_HBM3.json for MoE layer.
+INFO 04-20 00:07:38 llm_engine.py:382] # GPU blocks: 5826, # CPU blocks: 4096
+An error occurred: 
