@@ -24,7 +24,7 @@ TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 # Loop over each task and create a specific SLURM batch file
 for TASK in "${!TASKS[@]}"; do
     FEWSHOT=${TASKS[$TASK]}
-    FILE_NAME=${TARGET_DIR}/lm_eval_${TASK}.sh"
+    FILE_NAME="${TARGET_DIR}/lm_eval_${TASK}.sh"
     LOG_DIR="${BASE_DIR}/logs/${TASK}/${TIMESTAMP}"  # Directory for logs
     mkdir -p "$LOG_DIR"  # Ensure the directory exists
 
