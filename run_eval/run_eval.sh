@@ -31,7 +31,7 @@ for TASK in "${!TASKS[@]}"; do
     cat <<EOF >$FILE_NAME
 #!/bin/bash
 #SBATCH -J LM_eval_${TASK}                                  # Job name
-#SBATCH -A gts-ag117
+#SBATCH -A gts-ag117-prism
 #SBATCH -q embers
 #SBATCH -N1 --gres=gpu:H100:2                               # Number of nodes and GPUs
 #SBATCH --mem-per-gpu=80G                                   # Memory per GPU
