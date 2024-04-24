@@ -1,0 +1,61 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-23-2024 15:26:30
+Job ID:    5779145
+User ID:   vgupta345
+Account:   gts-ag117-prism
+Job name:  LM_eval_gsm8k
+Partition: gpu-h100
+QOS:       embers
+---------------------------------------
+Tue Apr 23 15:26:30 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.54.15              Driver Version: 550.54.15      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 80GB HBM3          On  |   00000000:0A:00.0 Off |                    0 |
+| N/A   31C    P0             70W /  700W |       0MiB /  81559MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H100 80GB HBM3          On  |   00000000:18:00.0 Off |                    1 |
+| N/A   28C    P0             69W /  700W |       0MiB /  81559MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+wandb: Currently logged in as: vima-gupta. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.16.6 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.4
+wandb: Run data is saved locally in /storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/wandb/run-20240423_152658-yue3138n
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run stellar-energy-181
+wandb: ⭐️ View project at https://wandb.ai/vima-gupta/prowl
+wandb: 🚀 View run at https://wandb.ai/vima-gupta/prowl/runs/yue3138n
+2024-04-23:15:26:59,055 INFO     [__main__.py:251] Verbosity set to INFO
+2024-04-23:15:27:05,420 INFO     [__main__.py:335] Selected Tasks: ['gsm8k']
+2024-04-23:15:27:05,425 INFO     [evaluator.py:131] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234
+2024-04-23:15:27:05,425 INFO     [evaluator.py:177] Initializing vllm model, with arguments: {'pretrained': 'mistralai/Mixtral-8x7B-v0.1', 'tensor_parallel_size': 2, 'dtype': 'auto', 'gpu_memory_utilization': 0.7, 'enforce_eager': True, 'mixtral_config_file': '/storage/coda1/p-apadmanabh3/0/vgupta345/prowl/mixtral_configs/none-none-2.json'}
+2024-04-23 15:27:07,957	INFO worker.py:1724 -- Started a local Ray instance.
+slurmstepd: error: *** JOB 5779145 ON atl1-1-01-006-19-0 CANCELLED AT 2024-04-23T23:26:31 DUE TO TIME LIMIT ***
+---------------------------------------
+Begin Slurm Epilog: Apr-23-2024 23:26:33
+Job ID:        5779145
+Array Job ID:  _4294967294
+User ID:       vgupta345
+Account:       gts-ag117-prism
+Job name:      LM_eval_gsm8k
+Resources:     cpu=16,gres/gpu:h100=2,mem=160G,node=1
+Rsrc Used:     cput=5-08:00:16,vmem=0,walltime=08:00:01,mem=6796660K,energy_used=0
+Partition:     gpu-h100
+QOS:           embers
+Nodes:         atl1-1-01-006-19-0
+---------------------------------------

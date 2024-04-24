@@ -93,3 +93,155 @@ Passing `trust_remote_code=True` will be mandatory to load this dataset from the
 Processed prompts:   2%|▏         | 933/40168 [1:38:41<63:19:52,  5.81s/it][A
 Processed prompts:   2%|▏         | 961/40168 [1:41:22<63:01:43,  5.79s/it][A
 Processed prompts:   2%|▏         | 989/40168 [1:44:04<63:04:50,  5.80s/it][A
+Processed prompts:   3%|▎         | 1017/40168 [1:46:46<62:58:45,  5.79s/it][A
+Processed prompts:   3%|▎         | 1045/40168 [1:49:27<62:43:22,  5.77s/it][A
+Processed prompts:   3%|▎         | 1073/40168 [1:52:06<62:28:56,  5.75s/it][A
+Processed prompts:   3%|▎         | 1101/40168 [1:54:49<62:39:21,  5.77s/it][A
+Processed prompts:   3%|▎         | 1129/40168 [1:57:30<62:25:50,  5.76s/it][A
+Processed prompts:   3%|▎         | 1157/40168 [2:00:14<62:47:11,  5.79s/it][A
+Processed prompts:   3%|▎         | 1186/40168 [2:03:01<62:32:44,  5.78s/it][A
+Processed prompts:   3%|▎         | 1215/40168 [2:05:45<62:11:32,  5.75s/it][A
+Processed prompts:   3%|▎         | 1244/40168 [2:08:30<61:53:43,  5.72s/it][A
+Processed prompts:   3%|▎         | 1273/40168 [2:11:15<61:43:09,  5.71s/it][A
+Processed prompts:   3%|▎         | 1302/40168 [2:14:00<61:40:39,  5.71s/it][A
+Processed prompts:   3%|▎         | 1331/40168 [2:16:45<61:30:39,  5.70s/it][A
+Processed prompts:   3%|▎         | 1360/40168 [2:19:28<61:09:17,  5.67s/it][A
+Processed prompts:   3%|▎         | 1389/40168 [2:22:10<60:55:35,  5.66s/it][A
+Processed prompts:   4%|▎         | 1418/40168 [2:24:56<61:00:26,  5.67s/it][A
+Processed prompts:   4%|▎         | 1447/40168 [2:27:37<60:39:18,  5.64s/it][A
+Processed prompts:   4%|▎         | 1476/40168 [2:30:19<60:24:57,  5.62s/it][A
+Processed prompts:   4%|▎         | 1505/40168 [2:33:03<60:26:26,  5.63s/it][A
+Processed prompts:   4%|▍         | 1534/40168 [2:35:45<60:18:22,  5.62s/it][A
+Processed prompts:   4%|▍         | 1563/40168 [2:38:26<60:01:16,  5.60s/it][A
+Processed prompts:   4%|▍         | 1592/40168 [2:41:07<59:51:36,  5.59s/it][A
+Processed prompts:   4%|▍         | 1621/40168 [2:43:52<60:06:16,  5.61s/it][A
+Processed prompts:   4%|▍         | 1650/40168 [2:46:33<59:51:21,  5.59s/it][A
+Processed prompts:   4%|▍         | 1679/40168 [2:49:14<59:41:50,  5.58s/it][A
+Processed prompts:   4%|▍         | 1708/40168 [2:51:55<59:30:29,  5.57s/it][A
+Processed prompts:   4%|▍         | 1737/40168 [2:54:38<59:41:30,  5.59s/it][A
+Processed prompts:   4%|▍         | 1766/40168 [2:57:19<59:28:31,  5.58s/it][A
+Processed prompts:   4%|▍         | 1795/40168 [3:00:00<59:20:51,  5.57s/it][A
+Processed prompts:   5%|▍         | 1824/40168 [3:02:43<59:29:33,  5.59s/it][A
+Processed prompts:   5%|▍         | 1853/40168 [3:05:23<59:16:39,  5.57s/it][A
+Processed prompts:   5%|▍         | 1882/40168 [3:08:02<58:52:22,  5.54s/it][A
+Processed prompts:   5%|▍         | 1911/40168 [3:10:41<58:41:12,  5.52s/it][A
+Processed prompts:   5%|▍         | 1940/40168 [3:13:22<58:43:26,  5.53s/it][A
+Processed prompts:   5%|▍         | 1969/40168 [3:16:01<58:33:08,  5.52s/it][A
+Processed prompts:   5%|▍         | 1998/40168 [3:18:38<58:14:09,  5.49s/it][A
+Processed prompts:   5%|▌         | 2027/40168 [3:21:17<58:03:38,  5.48s/it][A
+Processed prompts:   5%|▌         | 2056/40168 [3:23:58<58:18:25,  5.51s/it][A
+Processed prompts:   5%|▌         | 2085/40168 [3:26:36<58:05:11,  5.49s/it][A
+Processed prompts:   5%|▌         | 2114/40168 [3:29:15<57:57:00,  5.48s/it][A
+Processed prompts:   5%|▌         | 2143/40168 [3:31:52<57:46:18,  5.47s/it][A
+Processed prompts:   5%|▌         | 2172/40168 [3:34:32<57:52:21,  5.48s/it][A
+Processed prompts:   5%|▌         | 2201/40168 [3:37:10<57:40:42,  5.47s/it][A
+Processed prompts:   6%|▌         | 2230/40168 [3:39:48<57:33:28,  5.46s/it][A
+Processed prompts:   6%|▌         | 2259/40168 [3:42:28<57:42:25,  5.48s/it][A
+Processed prompts:   6%|▌         | 2288/40168 [3:45:05<57:25:10,  5.46s/it][A
+Processed prompts:   6%|▌         | 2317/40168 [3:47:42<57:16:48,  5.45s/it][A
+Processed prompts:   6%|▌         | 2346/40168 [3:50:18<57:02:30,  5.43s/it][A
+Processed prompts:   6%|▌         | 2375/40168 [3:52:57<57:08:54,  5.44s/it][A
+Processed prompts:   6%|▌         | 2404/40168 [3:55:33<56:55:00,  5.43s/it][A
+Processed prompts:   6%|▌         | 2433/40168 [3:58:10<56:46:22,  5.42s/it][A
+Processed prompts:   6%|▌         | 2462/40168 [4:00:47<56:43:46,  5.42s/it][A
+Processed prompts:   6%|▌         | 2491/40168 [4:03:27<56:59:31,  5.45s/it][A
+Processed prompts:   6%|▋         | 2520/40168 [4:06:02<56:41:27,  5.42s/it][A
+Processed prompts:   6%|▋         | 2549/40168 [4:08:38<56:29:26,  5.41s/it][A
+Processed prompts:   6%|▋         | 2578/40168 [4:11:13<56:15:03,  5.39s/it][A
+Processed prompts:   6%|▋         | 2607/40168 [4:13:52<56:33:40,  5.42s/it][A
+Processed prompts:   7%|▋         | 2636/40168 [4:16:28<56:22:22,  5.41s/it][A
+Processed prompts:   7%|▋         | 2665/40168 [4:19:09<56:43:35,  5.45s/it][A
+Processed prompts:   7%|▋         | 2695/40168 [4:21:49<56:21:48,  5.41s/it][A
+Processed prompts:   7%|▋         | 2725/40168 [4:24:33<56:30:38,  5.43s/it][A
+Processed prompts:   7%|▋         | 2755/40168 [4:27:13<56:08:57,  5.40s/it][A
+Processed prompts:   7%|▋         | 2785/40168 [4:29:54<55:56:31,  5.39s/it][A
+Processed prompts:   7%|▋         | 2815/40168 [4:32:36<55:58:09,  5.39s/it][A
+Processed prompts:   7%|▋         | 2845/40168 [4:35:16<55:43:48,  5.38s/it][A
+Processed prompts:   7%|▋         | 2875/40168 [4:37:55<55:26:09,  5.35s/it][A
+Processed prompts:   7%|▋         | 2905/40168 [4:40:34<55:13:25,  5.34s/it][A
+Processed prompts:   7%|▋         | 2935/40168 [4:43:16<55:23:43,  5.36s/it][A
+Processed prompts:   7%|▋         | 2965/40168 [4:45:56<55:12:55,  5.34s/it][A
+Processed prompts:   7%|▋         | 2995/40168 [4:48:35<55:03:57,  5.33s/it][A
+Processed prompts:   8%|▊         | 3025/40168 [4:51:13<54:49:54,  5.31s/it][A
+Processed prompts:   8%|▊         | 3055/40168 [4:53:55<55:00:44,  5.34s/it][A
+Processed prompts:   8%|▊         | 3085/40168 [4:56:34<54:51:28,  5.33s/it][A
+Processed prompts:   8%|▊         | 3115/40168 [4:59:11<54:37:11,  5.31s/it][A
+Processed prompts:   8%|▊         | 3145/40168 [5:01:51<54:35:35,  5.31s/it][A
+Processed prompts:   8%|▊         | 3175/40168 [5:04:33<54:50:32,  5.34s/it][A
+Processed prompts:   8%|▊         | 3205/40168 [5:07:12<54:40:49,  5.33s/it][A
+Processed prompts:   8%|▊         | 3235/40168 [5:09:50<54:28:14,  5.31s/it][A
+Processed prompts:   8%|▊         | 3265/40168 [5:12:31<54:38:02,  5.33s/it][A
+Processed prompts:   8%|▊         | 3295/40168 [5:15:09<54:24:24,  5.31s/it][A
+Processed prompts:   8%|▊         | 3325/40168 [5:17:47<54:08:24,  5.29s/it][A
+Processed prompts:   8%|▊         | 3355/40168 [5:20:23<53:53:59,  5.27s/it][A
+Processed prompts:   8%|▊         | 3385/40168 [5:23:04<54:05:39,  5.29s/it][A
+Processed prompts:   9%|▊         | 3415/40168 [5:25:40<53:44:14,  5.26s/it][A
+Processed prompts:   9%|▊         | 3445/40168 [5:28:16<53:32:58,  5.25s/it][A
+Processed prompts:   9%|▊         | 3475/40168 [5:30:52<53:21:32,  5.24s/it][A
+Processed prompts:   9%|▊         | 3505/40168 [5:33:32<53:35:37,  5.26s/it][A
+Processed prompts:   9%|▉         | 3535/40168 [5:36:08<53:23:59,  5.25s/it][A
+Processed prompts:   9%|▉         | 3565/40168 [5:38:46<53:19:31,  5.24s/it][A
+Processed prompts:   9%|▉         | 3595/40168 [5:41:22<53:11:01,  5.24s/it][A
+Processed prompts:   9%|▉         | 3625/40168 [5:44:02<53:27:48,  5.27s/it][A
+Processed prompts:   9%|▉         | 3655/40168 [5:46:39<53:19:02,  5.26s/it][A
+Processed prompts:   9%|▉         | 3685/40168 [5:49:15<53:06:35,  5.24s/it][A
+Processed prompts:   9%|▉         | 3715/40168 [5:51:52<52:58:32,  5.23s/it][A
+Processed prompts:   9%|▉         | 3745/40168 [5:54:31<53:12:20,  5.26s/it][A
+Processed prompts:   9%|▉         | 3775/40168 [5:57:06<52:53:15,  5.23s/it][A
+Processed prompts:   9%|▉         | 3805/40168 [5:59:41<52:39:34,  5.21s/it][A
+Processed prompts:  10%|▉         | 3835/40168 [6:02:21<52:54:06,  5.24s/it][A
+Processed prompts:  10%|▉         | 3865/40168 [6:04:56<52:40:27,  5.22s/it][A
+Processed prompts:  10%|▉         | 3895/40168 [6:07:31<52:25:40,  5.20s/it][A
+Processed prompts:  10%|▉         | 3925/40168 [6:10:04<52:06:45,  5.18s/it][A
+Processed prompts:  10%|▉         | 3955/40168 [6:12:42<52:17:04,  5.20s/it][A
+Processed prompts:  10%|▉         | 3985/40168 [6:15:16<52:08:22,  5.19s/it][A
+Processed prompts:  10%|▉         | 4015/40168 [6:17:52<52:02:09,  5.18s/it][A
+Processed prompts:  10%|█         | 4045/40168 [6:20:26<51:53:43,  5.17s/it][A
+Processed prompts:  10%|█         | 4075/40168 [6:23:04<52:06:27,  5.20s/it][A
+Processed prompts:  10%|█         | 4105/40168 [6:25:38<51:52:37,  5.18s/it][A
+Processed prompts:  10%|█         | 4135/40168 [6:28:11<51:39:16,  5.16s/it][A
+Processed prompts:  10%|█         | 4165/40168 [6:30:45<51:28:12,  5.15s/it][A
+Processed prompts:  10%|█         | 4195/40168 [6:33:22<51:44:20,  5.18s/it][A
+Processed prompts:  11%|█         | 4225/40168 [6:35:56<51:32:06,  5.16s/it][A
+Processed prompts:  11%|█         | 4255/40168 [6:38:29<51:18:51,  5.14s/it][A
+Processed prompts:  11%|█         | 4285/40168 [6:41:02<51:05:50,  5.13s/it][A
+Processed prompts:  11%|█         | 4315/40168 [6:43:39<51:25:57,  5.16s/it][A
+Processed prompts:  11%|█         | 4345/40168 [6:46:12<51:12:30,  5.15s/it][A
+Processed prompts:  11%|█         | 4375/40168 [6:48:46<51:06:15,  5.14s/it][A
+Processed prompts:  11%|█         | 4405/40168 [6:51:18<50:53:05,  5.12s/it][A
+Processed prompts:  11%|█         | 4435/40168 [6:53:57<51:20:50,  5.17s/it][A
+Processed prompts:  11%|█         | 4465/40168 [6:57:42<58:12:04,  5.87s/it][A
+Processed prompts:  11%|█         | 4495/40168 [7:00:14<55:47:33,  5.63s/it][A
+Processed prompts:  11%|█▏        | 4525/40168 [7:02:50<54:28:43,  5.50s/it][A
+Processed prompts:  11%|█▏        | 4555/40168 [7:05:23<53:10:37,  5.38s/it][A
+Processed prompts:  11%|█▏        | 4585/40168 [7:07:55<52:16:11,  5.29s/it][A
+Processed prompts:  11%|█▏        | 4615/40168 [7:10:28<51:36:59,  5.23s/it][A
+Processed prompts:  12%|█▏        | 4645/40168 [7:13:04<51:29:38,  5.22s/it][A
+Processed prompts:  12%|█▏        | 4675/40168 [7:15:35<50:55:14,  5.16s/it][A
+Processed prompts:  12%|█▏        | 4705/40168 [7:18:06<50:32:01,  5.13s/it][A
+Processed prompts:  12%|█▏        | 4735/40168 [7:20:39<50:20:45,  5.12s/it][A
+Processed prompts:  12%|█▏        | 4765/40168 [7:23:15<50:32:28,  5.14s/it][A
+Processed prompts:  12%|█▏        | 4795/40168 [7:25:47<50:19:00,  5.12s/it][A
+Processed prompts:  12%|█▏        | 4825/40168 [7:28:18<50:01:10,  5.09s/it][A
+Processed prompts:  12%|█▏        | 4855/40168 [7:30:49<49:49:26,  5.08s/it][A
+Processed prompts:  12%|█▏        | 4885/40168 [7:33:25<50:03:51,  5.11s/it][A
+Processed prompts:  12%|█▏        | 4915/40168 [7:35:56<49:52:00,  5.09s/it][A
+Processed prompts:  12%|█▏        | 4945/40168 [7:38:27<49:38:17,  5.07s/it][A
+Processed prompts:  12%|█▏        | 4975/40168 [7:40:58<49:26:36,  5.06s/it][A
+Processed prompts:  12%|█▏        | 5005/40168 [7:43:38<50:15:27,  5.15s/it][A
+Processed prompts:  13%|█▎        | 5036/40168 [7:46:14<49:52:26,  5.11s/it][A
+Processed prompts:  13%|█▎        | 5067/40168 [7:48:49<49:26:35,  5.07s/it][A
+Processed prompts:  13%|█▎        | 5098/40168 [7:51:24<49:14:02,  5.05s/it][Aslurmstepd: error: *** JOB 5745596 ON atl1-1-01-006-29-0 CANCELLED AT 2024-04-20T09:26:56 DUE TO TIME LIMIT ***
+---------------------------------------
+Begin Slurm Epilog: Apr-20-2024 09:26:57
+Job ID:        5745596
+Array Job ID:  _4294967294
+User ID:       vgupta345
+Account:       gts-ag117-prism
+Job name:      LM_eval_hellaswag
+Resources:     cpu=16,gres/gpu:h100=2,mem=160G,node=1
+Rsrc Used:     cput=5-08:03:12,vmem=0,walltime=08:00:12,mem=25477696K,energy_used=0
+Partition:     gpu-h100
+QOS:           embers
+Nodes:         atl1-1-01-006-29-0
+---------------------------------------

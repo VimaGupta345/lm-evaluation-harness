@@ -5,3 +5,25 @@ INFO 04-20 03:08:04 weight_utils.py:163] Using model weights format ['*.safetens
 INFO 04-20 03:10:16 fused_moe.py:241] Using configuration from /storage/coda1/p-apadmanabh3/0/vgupta345/prowl/vllm/model_executor/layers/fused_moe/configs/E=8,N=7168,device_name=NVIDIA_H100_80GB_HBM3.json for MoE layer.
 [36m(RayWorkerVllm pid=258774)[0m INFO 04-20 03:10:16 fused_moe.py:241] Using configuration from /storage/coda1/p-apadmanabh3/0/vgupta345/prowl/vllm/model_executor/layers/fused_moe/configs/E=8,N=7168,device_name=NVIDIA_H100_80GB_HBM3.json for MoE layer.
 INFO 04-20 03:10:18 llm_engine.py:382] # GPU blocks: 7435, # CPU blocks: 4096
+vllm (pretrained=mistralai/Mixtral-8x7B-v0.1,tensor_parallel_size=2,dtype=auto,gpu_memory_utilization=0.7,enforce_eager=True,mixtral_config_file=/storage/coda1/p-apadmanabh3/0/vgupta345/prowl/mixtral_configs/none-none-2.json), gen_kwargs: (None), limit: None, num_fewshot: 25, batch_size: 128
+|    Tasks    |Version|Filter|n-shot| Metric |Value |   |Stderr|
+|-------------|------:|------|-----:|--------|-----:|---|-----:|
+|arc_challenge|      1|none  |    25|acc     |0.5768|±  |0.0144|
+|             |       |none  |    25|acc_norm|0.6135|±  |0.0142|
+
+INFO 04-20 10:01:01 cdf_sketch.py:71] PRE_ATTN_PROJECTION_execution_time: PRE_ATTN_PROJECTION stats: min: 0.09923200309276581, max: 109.16780853271484, mean: 2.7334264236680723, 25th percentile: 1.3008261825773606, median: 1.3218068058938028, 75th percentile: 1.3593404275072398, 95th percentile: 1.4148161816090492, 99th percentile: 55.64547928590583 99.9th percentile: 75.26392530035449 count: 5665.0 sum: 15484.86069007963
+Reached here
+INFO 04-20 10:01:06 cdf_sketch.py:71] ATTN_COMPUTATION_execution_time: ATTN_COMPUTATION stats: min: 0.07168000191450119, max: 341.6117248535156, mean: 1.1803843684948239, 25th percentile: 0.7580540480894626, median: 0.8065409791043656, 75th percentile: 0.8478932335068007, 95th percentile: 0.9111930164522756, 99th percentile: 14.775943182990996 99.9th percentile: 25.20394615391064 count: 5665.0 sum: 6686.877447523177
+Reached here
+INFO 04-20 10:01:06 cdf_sketch.py:71] POST_ATTN_PROJECTION_execution_time: POST_ATTN_PROJECTION stats: min: 0.13769599795341492, max: 28.47724723815918, mean: 1.4703672654473035, 25th percentile: 1.5793283351692768, median: 1.6048008335990964, 75th percentile: 1.627426059850711, 95th percentile: 1.6702940203134657, 99th percentile: 1.7594472343604337 99.9th percentile: 1.8719856435831073 count: 5665.0 sum: 8329.630558758974
+Reached here
+INFO 04-20 10:01:06 cdf_sketch.py:71] TOTAL_ATTN_COMPUTATION_execution_time: TOTAL_ATTN_COMPUTATION stats: min: 0.411327987909317, max: 399.7357177734375, mean: 6.681322744038919, 25th percentile: 4.95798810108071, median: 5.048039952189776, 75th percentile: 5.139727413494517, 95th percentile: 5.275112754178585, 99th percentile: 78.80693145854929 99.9th percentile: 108.74449663147404 count: 5665.0 sum: 37849.69334498048
+Reached here
+INFO 04-20 10:01:06 cdf_sketch.py:71] EXPERT_COMPUTATION_execution_time: EXPERT_COMPUTATION stats: min: 1.3723200559616089, max: 184.58047485351562, mean: 16.92851385432645, 25th percentile: 17.939418855724938, median: 18.4119603230175, 75th percentile: 18.783906719288037, 95th percentile: 19.201732032677477, 99th percentile: 26.977430211401757 99.9th percentile: 38.97813005423709 count: 5665.0 sum: 95900.03098475933
+Reached here
+INFO 04-20 10:01:07 cdf_sketch.py:71] TOTAL_EXPERT_COMPUTATION_execution_time: TOTAL_EXPERT_COMPUTATION stats: min: 1.4680320024490356, max: 412.4764404296875, mean: 18.220564872421, 25th percentile: 19.01067154327947, median: 19.472446954159587, 75th percentile: 19.82612466739632, 95th percentile: 20.26713286000765, 99th percentile: 36.78170966575206 99.9th percentile: 66.61973797750802 count: 5665.0 sum: 103219.50000226498
+Reached here
+INFO 04-20 10:01:07 cdf_sketch.py:71] SCHEDULE_ITERATION_execution_time: SCHEDULE_ITERATION stats: min: 9.250538560008863, max: 183.34081989200786, mean: 137.8416541462082, 25th percentile: 133.88766565151673, median: 150.95792752571776, 75th percentile: 158.38063028267285, 95th percentile: 173.9905904132433, 99th percentile: 179.64833227629666 99.9th percentile: 180.00798859717014 count: 178.0 sum: 24535.81443802506
+Reached here
+INFO 04-20 10:01:07 cdf_sketch.py:71] WORKER_ITERATION_execution_time: WORKER_ITERATION stats: min: 418.6268310546875, max: 4077.173095703125, mean: 2952.2099930068193, 25th percentile: 2948.353514966883, median: 3193.9133188687024, 75th percentile: 3364.390872102787, 95th percentile: 3688.599913020428, 99th percentile: 3839.1345823452566 99.9th percentile: 3839.1345823452566 count: 177.0 sum: 522541.16876220703
+Reached here
