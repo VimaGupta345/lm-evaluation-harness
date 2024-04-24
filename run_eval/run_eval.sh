@@ -7,7 +7,7 @@ mkdir -p "$TARGET_DIR"
 declare -A TASKS
 TASKS["arc_challenge"]=25
 TASKS["hellaswag"]=10
-TASKS["truthfulqa_mc"]=0
+TASKS["truthfulqa"]=0
 TASKS["mmlu"]=5
 TASKS["winogrande"]=5
 TASKS["gsm8k"]=5
@@ -17,6 +17,8 @@ BASE_DIR="/storage/home/hcoda1/4/vgupta345/p-apadmanabh3-0/lm-eval/lm_eval_new/l
 
 # MIXTRAL configuration path
 MIXTRAL_CONFIG_PATH="/storage/coda1/p-apadmanabh3/0/vgupta345/prowl/mixtral_configs/none-none-2.json"
+# Extract the last component using parameter expansion
+CONFIG_NAME="${MIXTRAL_CONFIG_PATH##*/}"
 
 # Timestamp for creating a unique directory
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
@@ -25,7 +27,7 @@ TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 for TASK in "${!TASKS[@]}"; do
     FEWSHOT=${TASKS[$TASK]}
     FILE_NAME="${TARGET_DIR}/lm_eval_${TASK}.sbatch"
-    LOG_DIR="${BASE_DIR}/logs/${TASK}/${TIMESTAMP}_{MIXTRAL_CONFIG_PATH}"  # Directory for logs
+    LOG_DIR="${BASE_DIR}/logs/${TASK}/${TIMESTAMP}_${CONFIG_NAME}"  # Directory for logs
     mkdir -p "$LOG_DIR"  # Ensure the directory exists
 
     cat <<EOF >$FILE_NAME
@@ -35,7 +37,7 @@ for TASK in "${!TASKS[@]}"; do
 #SBATCH -q embers
 #SBATCH -N1 --gres=gpu:H100:2                               # Number of nodes and GPUs
 #SBATCH --mem-per-gpu=80G                                   # Memory per GPU
-#SBATCH -t8:00:00                                           # Max time (6 hours)
+#SBATCH -t8:00:00                                           # Max time (8 hours)
 #SBATCH -o ${LOG_DIR}/${TASK}_%j.out                        # Output and error file
 #SBATCH --mail-type=BEGIN,END,FAIL                          # Mail events
 #SBATCH --mail-user=vgupta345@gatech.edu                    # Email for notifications

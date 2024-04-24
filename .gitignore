@@ -1,6 +1,8 @@
 env
 *.pyc
 output/
+*.csv
+*.png
 data/
 lm_cache
 .idea
