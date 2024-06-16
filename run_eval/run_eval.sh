@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGET_DIR="/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/run_eval/sbatch_files"
+TARGET_DIR="/storage/coda1/p-apadmanabh3/0/vgupta345/lm-eval/lm_eval_new/lm-evaluation-harness/run_eval/sbatch_files_drop_2"
 mkdir -p "$TARGET_DIR"
 
 # Define the tasks and corresponding few-shot values
@@ -16,7 +16,7 @@ TASKS["gsm8k"]=5
 BASE_DIR="/storage/home/hcoda1/4/vgupta345/p-apadmanabh3-0/lm-eval/lm_eval_new/lm-evaluation-harness"
 
 # MIXTRAL configuration path
-MIXTRAL_CONFIG_PATH="/storage/coda1/p-apadmanabh3/0/vgupta345/prowl/mixtral_configs/none-none-2.json"
+MIXTRAL_CONFIG_PATH="/storage/coda1/p-apadmanabh3/0/vgupta345/prowl/mixtral_configs/none-dynamic-drop-2.json"
 # Extract the last component using parameter expansion
 CONFIG_NAME="${MIXTRAL_CONFIG_PATH##*/}"
 
@@ -42,10 +42,14 @@ for TASK in "${!TASKS[@]}"; do
 #SBATCH --mail-type=BEGIN,END,FAIL                          # Mail events
 #SBATCH --mail-user=vgupta345@gatech.edu                    # Email for notifications
 
-nvidia-smi  # Validate GPU configuration
+module load gcc/12.3.0
+nvidia-smi                                                                        # validate correct config
 
 source /storage/home/hcoda1/4/vgupta345/micromamba/etc/profile.d/micromamba.sh
 micromamba activate /storage/coda1/p-apadmanabh3/0/vgupta345/prowl_new
+
+export NCCL_P2P_DISABLE=1
+export TOKENIZERS_PARALLELISM=false
 
 cd $BASE_DIR
 
@@ -54,7 +58,7 @@ lm-eval --model vllm \
     --tasks $TASK \
     --num_fewshot $FEWSHOT \
     --batch_size 128 \
-    --wandb_args project=prowl,group=$TASK \
+    --wandb_args project=prowl,group=acc_drop_2,name=$TASK \
     >> "${LOG_DIR}/lm_eval_${TASK}.log"
 
 micromamba deactivate
