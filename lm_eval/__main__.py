@@ -439,9 +439,9 @@ def cli_evaluate(args: Union[argparse.Namespace, None] = None) -> None:
         if "groups" in results:
             print(make_table(results, "groups"))
 
-        if args.wandb_args:
-            # Tear down wandb run once all the logging is done.
-            wandb_logger.run.finish()
+        # if args.wandb_args:
+        #     # Tear down wandb run once all the logging is done.
+        #     wandb_logger.run.finish()
 
 
 if __name__ == "__main__":
